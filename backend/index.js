@@ -1,10 +1,18 @@
-var express = require("express");
-var app = express();
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
-});
-
+const express = require("express");
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGO_URI, () => {
-  console.log("Connected to Mongo DB Successfully!!");
+require('dotenv').config();
+
+const app = express();
+const MONGODB_URI = process.env.MONGODB_URI;
+app.listen(process.env.PORT || 8000, async () => {
+  //Connect to MongoDB
+  await mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+      if (err) {
+          console.log(err);
+      }
+      else {
+          console.log("Mongo DB connected successfully!");
+      }
+  });
+  console.log(`Listening at port ${process.env.PORT || 8000}`);
 });
