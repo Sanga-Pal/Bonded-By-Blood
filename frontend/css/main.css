@@ -1,104 +1,48 @@
-/* body {
-  margin: 0;
-  background-color: rgb(78, 86, 95);
-}
-.cards {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-}
-.card {
-  width: 400px;
-  height: 400px;
-  background-color: rgb(100, 42, 42);
-  margin: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-.card h1 {
-  font-family: "Courier New", Courier, monospace;
-  text-align: center;
-  word-wrap: normal;
-  height: fit-content;
-  margin: auto;
-  color: aliceblue;
-}
-.card:hover {
-  opacity: 0.8;
-  transform: scale(1.01);
-}
-*/
-
-
-/*responsive*/
-
-
-/* @media screen and (max-width: 600px) {
-  .cards {
-    flex-direction: column;
-  }
-  .card {
-    width: 300px;
-    height: 300px;
-    margin: auto;
-  }
-}  */
-
-
-/* new codes */
-
-
 /* 
 theme colors
 C62368 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 * {
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    background: url(/frontend/IMG/bg3.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background: url(/frontend/IMG/bg3.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 nav {
-    display: flex;
-    padding: 0 3%;
-    width: 100%;
-    color: white;
-    flex-direction: row;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    left: 0%;
-    height: 75px;
-    z-index: 100;
-    background: linear-gradient(rgba(31, 13, 51, 0.452), transparent);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    backdrop-filter: blur(2px);
-    /* justify-content: space-between; */
+  display: flex;
+  padding: 0 2%;
+  width: 100%;
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0%;
+  height: 75px;
+  z-index: 100;
+  background: linear-gradient(rgba(31, 13, 51, 0.452), transparent);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(2px);
+  justify-content: space-between;
 }
 
 nav::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
+/* 
 .navbarleft img {
     background: transparent
 }
@@ -109,15 +53,7 @@ nav::-webkit-scrollbar {
     font-weight: bolder;
 }
 
-.navbarleft {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    font-size: 20px;
-    flex-basis: 30%;
-    background: transparent
-}
+
 
 .navbarleft ul li {
     padding-top: 31%;
@@ -148,92 +84,78 @@ nav::-webkit-scrollbar {
         margin: 0 -35px 0 35px;
     }
 }
-
-.navbarmiddle {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-basis: 45%;
-    background: transparent;
-    margin-left: 2%;
-    transition: 800ms;
+*/
+.svg_type {
+  margin-top: 40%;
 }
-
-.navbarmiddle ul {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-    background: transparent;
-    font-size: 15px;
+.navbarleft {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 20px;
+  flex-basis: 30%;
+  background: transparent;
 }
-
-.navbarmiddle ul li {
-    list-style: none;
-    background: transparent;
-}
-
-.navbarmiddle ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 0 40px;
-    background: transparent;
-}
-
-.navbarmiddle ul li a:hover {
-    transition: 200ms;
-    color: var(--themeblue);
-    font-weight: bold;
-}
-
 .navbarright {
-    display: flex;
-    flex-basis: 20%;
-    justify-content: flex-end;
-    background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-basis: 45%;
+  background: transparent;
+  transition: 800ms;
+}
+.navbarright ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background: transparent;
+  font-size: 15px;
+  width: 100%;
 }
 
-.navbarright a {
-    text-decoration: none;
-    background-color: rgb(255, 255, 255);
-    color: rgb(9, 20, 56);
-    font-weight: bold;
-    margin-left: 30%;
-    border-radius: 1em;
-    padding: 6px 20px;
-    font-size: 15px;
+.navbarright ul li {
+  list-style: none;
+  background: transparent;
+  flex-wrap: nowrap;
 }
 
-.navbarright a:hover {
-    transition: 500ms;
-    background-color: rgb(214, 136, 197);
-    color: black;
-    font-weight: bold;
-    /* transform:scale(1.03); */
+.navbarright ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 0 40px;
+  background: transparent;
+  min-width: fit-content;
+  white-space: nowrap;
 }
 
+.navbarright ul li a:hover {
+  transition: 200ms;
+  color: var(--themeblue);
+  font-weight: bold;
+}
 .innercontainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 97px;
-    padding: 0 5px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 97px;
+  padding: 0 5px;
 }
 
 .leftcont {
-    width: 35%;
-    padding: 0 20px;
-    color: white;
+  width: 35%;
+  padding: 0 20px;
+  color: white;
 }
 
 .paraleft {
-    padding: 20px 3px;
-    display: flex;
-    text-align: left;
-    justify-content: right;
-    align-items: flex-end;
+  padding: 20px 3px;
+  display: flex;
+  text-align: left;
+  justify-content: right;
+  align-items: flex-end;
 }
-
 
 /* }
 .circle{
@@ -242,3 +164,23 @@ nav::-webkit-scrollbar {
   height:100px;
   width:100px;
 } */
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+  .svg_type {
+    margin-top: -20px;
+  }
+  .navbarleft {
+    margin: 20px;
+  }
+  .navbarright {
+    margin-top: -120px;
+    width: 100%;
+  }
+  .navbarright ul {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
