@@ -23,3 +23,13 @@ function api_call() {
     .then((json) => console.log(json))
     .catch((err) => console.log(err));
 }
+function validate() {
+  let form = document.forms["registrationForm"];
+  var formData = {
+    firstName: form["fname"].value,
+    lastName: form["lname"].value,
+    contact: form["contact"].value,
+    bloodGroup: form["bgrp"].value,
+  };
+  alert(JSON.stringify(formData))
+}

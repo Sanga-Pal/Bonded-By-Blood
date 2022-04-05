@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Give</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <title>Register @ BBB</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/donate.css" />
 
 </head>
 
@@ -32,33 +33,32 @@
         </div>
         <div class="navbarright">
             <ul>
-                <li><a href="/pages/register.html">Donate</a></li>
+                <li><a id="active" href="/pages/register.html">Donate</a></li>
                 <li><a href="/pages/locate.html">Find Donors</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </div>
     </nav>
-    <div class="innercontainer">
-        <div class="leftcont">
-            <p class="paraleft">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic incidunt molestias quia, soluta
-                asperiores rerum suscipit possimus distinctio corporis error culpa laborum debitis exercitationem
-                repudiandae adipisci et perspiciatis veritafficiis ab enim nesciunt porro ea, alias reiciendis
-                reprehenderit harum, illum numquam!
-            </p>
-            <img class="leftimg" src="./assets/blood.svg" alt="" width="200px">
-        </div>
-        <div class="rightcont">
-            <!-- <div class="circle">
-                    boom
-                </div>
-                <div class="circle">
-                    baaam 
-                </div> -->
-        </div>
+    <div id="data">
+        <form id="registrationForm" onsubmit="validate(this)">
+            <input placeholder="First Name" type="text" name="fName" id="fname" required>
+            <input placeholder="Last Name" type="text" name="lName" id="lname" required>
+            <input placeholder="Contact" type="text" name="contact" id="contact" required>
+            <select name="bloodGroup" id="bgrp" form="registrationForm" required>
+                <option value="null">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <input type="submit">
+        </form>
     </div>
-
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
