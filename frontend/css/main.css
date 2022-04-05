@@ -1,48 +1,48 @@
-body{
-    margin:0;
-    background-color: rgb(78, 86, 95);
+body {
+  margin: 0;
+  background-color: rgb(78, 86, 95);
 }
-.cards{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+.cards {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
-.card{
-    width: 400px;
-    height: 400px;
-    background-color: rgb(100, 42, 42);
-    margin:20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+.card {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(100, 42, 42);
+  margin: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-.card h1{
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    word-wrap: normal;
-    height: fit-content;
-    margin: auto;
-    color: aliceblue;
+.card h1 {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  word-wrap: normal;
+  height: fit-content;
+  margin: auto;
+  color: aliceblue;
 }
-.card:hover{
-    opacity: 0.8;
-    transform: scale(1.01);
+.card:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
 }
-
-
 
 /*responsive*/
 @media screen and (max-width: 600px) {
-    .cards{
-        flex-direction: column;
-    }
-    .card{
-        width: 300px;
-        height: 300px;
-        margin: auto;
-    }
+  .cards {
+    flex-direction: column;
+  }
+  .card {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
 }

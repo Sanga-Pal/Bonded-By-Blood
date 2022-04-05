@@ -16,12 +16,12 @@ const userSchema = new mongoose.Schema({
   contact: {
     type: Number,
     required: true,
-    unique: true,
+    // unique: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
   },
   age: {
     type: Number,
@@ -39,8 +39,9 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  loc: { type: { type: String }, coordinates: [Number] },
 });
-
-const User = new mongoose.model("User",userSchema);
+userSchema.index({ loc: "2dsphere" });
+const User = new mongoose.model("User", userSchema);
 
 module.exports = User;
