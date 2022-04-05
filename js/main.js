@@ -23,6 +23,12 @@ function api_call() {
     .then((json) => console.log(json))
     .catch((err) => console.log(err));
 }
+
+/*Form functionality */
+let reg_form = document.querySelector("#submit");
+reg_form.addEventListener("click",function(event){
+  event.preventDefault();//prevent useless refresh
+})
 function validate() {
   let form = document.forms["registrationForm"];
   var formData = {
@@ -30,6 +36,7 @@ function validate() {
     lastName: form["lname"].value,
     contact: form["contact"].value,
     bloodGroup: form["bgrp"].value,
+    location: form["geocoder_input"]?.value,
   };
-  alert(JSON.stringify(formData))
+  console.log (JSON.stringify(formData))
 }

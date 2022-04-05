@@ -12,6 +12,8 @@
 }
 #registrationForm input,
 select {
+  height: 35px;
+  font-size: 10px;
   color: aliceblue;
   min-width: 300px;
   /* max-width: 50%; */
@@ -23,9 +25,27 @@ select {
   background-color: rgba(255, 255, 255, 0.1);
 }
 select option {
-    /* color:yellow; */
+  /* color:yellow; */
   background-color: rgba(9, 9, 9, 0.799);
 }
-#registrationForm input::placeholder {
-  /* color: yellow; */
+#geocoder svg,
+.mapboxgl-ctrl-geocoder--input {
+  display: none;
+}
+#geocoder .mapboxgl-ctrl-geocoder,
+mapboxgl-ctrl {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* #geocoder .suggestions-wrapper{
+    margin-left: 300px;
+} */
+#geocoder {
+  margin: auto;
+}
+#geocoder input {
+  display: block;
+  height: 35px;
+  font-size: 10px;
+  margin-left: -11.5px;
+  position: relative !important;
 }
