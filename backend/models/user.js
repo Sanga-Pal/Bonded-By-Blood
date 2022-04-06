@@ -41,6 +41,19 @@ const userSchema = new mongoose.Schema({
   },
   loc: { type: { type: String }, coordinates: [Number] },
 });
+userSchema.path("contact").validate(async (contact) => {
+  const ct=await mongoose.models.User.countDocuments({
+    contact,
+  });
+  return !ct;
+}, "Contact Exists");
+userSchema.path("email").validate(async (email) => {
+  const ct=await mongoose.models.User.countDocuments({
+    email,
+  });
+  return !ct;
+}, "Email Exists");
+
 userSchema.index({ loc: "2dsphere" });
 const User = new mongoose.model("User", userSchema);
 

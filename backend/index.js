@@ -12,12 +12,13 @@ app.get("/", (req, res) => {
   res.send("BloodMates Backend!");
 });
 app.post("/", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const newUser = new User(req.body);
   newUser.save((err) => {
     if (err) {
-      res.status(500).json({ msg: "Sorry, internal error" });
-      console.log(err)
+      res.status(500).json({ contact: err.errors?.contact?.name,
+      email : err.errors?.email?.name });
+      console.log(err);
     } else {
       res.json({
         msg: "data saved",
