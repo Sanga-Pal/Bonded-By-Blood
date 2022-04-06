@@ -170,6 +170,10 @@ nav::-webkit-scrollbar {
   text-align: left;
   line-height: 1.4em;
 }
+.rightcont{
+
+  width:100%;
+}
 
 .paraleft {
   padding: 20px 3px;
@@ -182,13 +186,38 @@ nav::-webkit-scrollbar {
   margin:2px 25%;
 }
 
-/* }
 .circle{
   border-radius: 50%;
-  background-color: red;
+  background-color: rgba(206, 170, 170, 0.581);
   height:100px;
   width:100px;
-} */
+  box-shadow: rgba(255, 255, 255, 0.392) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.circle1{
+  margin-left: 35%;
+  height:281px;
+  width:281px;
+}
+.circle2{
+  margin-top: -10%;
+  margin-left: 50%;
+  height:282px;
+  width:282px;
+}
+.idk{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top:45%;
+  color:rgb(239, 227, 227);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
   nav {
