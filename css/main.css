@@ -162,11 +162,11 @@ nav::-webkit-scrollbar {
   margin-top: 40PX;
   margin-left: 10PX;
   color: white;
-  background-color: rgba(255, 255, 255, 0.082);
-  border: solid 1px rgba(255, 255, 255, 0.137);
+  /* background-color: rgba(255, 255, 255, 0.082); */
+  /* border: solid 1px rgba(255, 255, 255, 0.137); */
   box-sizing: border-box;
   border-radius: 8px;
-  box-shadow: #c6236738 0px 3px 8px;
+  /* box-shadow: #c6236738 0px 3px 8px; */
   text-align: left;
   line-height: 1.4em;
 }
@@ -198,12 +198,30 @@ nav::-webkit-scrollbar {
   margin-left: 35%;
   height:281px;
   width:281px;
+  transform:scale(1);
 }
 .circle2{
   margin-top: -10%;
   margin-left: 50%;
   height:282px;
   width:282px;
+  background-color: rgba(160, 130, 130, 0.581);
+}
+.circle1:hover{
+  transform:scale(1.25);
+  transition:400ms ease;
+}
+.circle1:active{
+  transform:scale(0.9);
+  transition:400ms ease;
+}
+.circle2:hover{
+  transform:scale(1.2);
+  transition:400ms ease;
+}
+.circle2:active{
+  transform:scale(0.9);
+  transition:400ms ease;
 }
 .idk{
   display: flex;
@@ -215,6 +233,10 @@ nav::-webkit-scrollbar {
   font-size: 32px;
   font-weight: 600;
 }
+/* .idk a{
+  text-decoration: none;
+  color:white;
+} */
 
 
 
