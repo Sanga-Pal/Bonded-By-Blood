@@ -56,6 +56,7 @@
         </div>
     </nav>
     <div id="data">
+        <h1>Be A Hero!</h1>
         <form id="registrationForm">
             <div class="form_row"><input placeholder="First Name" type="text" name="fName" id="fname" required>
                 <input placeholder="Last Name" type="text" name="lName" id="lname" required>
@@ -66,17 +67,26 @@
                 <input placeholder="Date Of Birth" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"
                     required>
             </div>
-            <select name="bloodGroup" id="bgrp" form="registrationForm" required>
-                <option value="null">Select Blood Group</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-            </select>
+            <div class="form_row">
+                <select name="sex" id="sex" form="registrationForm" required>
+                    <option value="null">Sex</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="N">Non Binary</option>
+                    <option value="X">Prefer not to disclose</option>
+                </select>
+                <select name="bloodGroup" id="bgrp" form="registrationForm" required>
+                    <option value="null">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
 
             <div class="form_row">
                 <div class="cm"><input placeholder="Height" type="number" name="height" id="height" required>
@@ -89,7 +99,7 @@
             <input type="submit" id="submit" onclick="validate(this)">
         </form>
     </div>
-    <script src="../js/main.js"></script>
+    <script src="../js/register.js"></script>
     <script>
         mapboxgl.accessToken =
             "pk.eyJ1IjoiY29kZS1zb2hhbSIsImEiOiJjbDFsdmU0MjUwZWlpM2pvYnZmem16dG1kIn0.UX8hn1EN63EqElkp8D8Yhg";

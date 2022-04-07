@@ -2,10 +2,16 @@
 
 #data {
   /* height: 60vh; */
+  padding-top: 60px;
   width: 100%;
   color: white;
   font-weight: 200 !important;
   background-color: rgb(29, 28, 28);
+}
+#data>h1{
+  margin: auto;
+  width: fit-content;
+  color: rgb(227, 52, 122);
 }
 #registrationForm {
   display: flex;
@@ -16,7 +22,7 @@ select {
   height: 35px;
   font-size: 10px;
   color: aliceblue;
-  min-width: 300px;
+  min-width: 250px;
   /* max-width: 50%; */
   margin: auto;
   margin-bottom: 20px;
@@ -51,7 +57,6 @@ mapboxgl-ctrl {
   position: relative !important;
 }
 
-
 /*Response Modal*/
 /* The Modal (background) */
 .modal {
@@ -63,16 +68,16 @@ mapboxgl-ctrl {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0,0.4); /* Fallback color */
+  background-color: rgb(0, 0, 0, 0.4); /* Fallback color */
 }
 
 /* Modal Content/Box */
 #modal-content {
   background-color: rgba(170, 170, 170, 0.192);
-  margin: 300px auto  ; /* 15% from the top and centered */
+  margin: 300px auto; /* 15% from the top and centered */
   padding: 20px;
   width: fit-content;
-  border: 1px solid #888;; /* Could be more or less, depending on screen size */
+  border: 1px solid #888; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -107,18 +112,27 @@ mapboxgl-ctrl {
     transform: scale(1, 1);
   }
 }
-.cm,.kg{
+.cm,
+.kg {
   margin: auto;
 }
-.cm::after{
+.cm::after {
   content: "cm";
 }
-.kg::after{
+.kg::after {
   content: "kg";
 }
-
-.form_row{
+.form_row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+
+/*scrollbar*/
+::-webkit-scrollbar{
+  width: 5px;
+}
+ ::-webkit-scrollbar-thumb{
+  background-color: rgb(191, 31, 95);
 }

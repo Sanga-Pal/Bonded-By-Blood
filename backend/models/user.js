@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  sex: {
+    type: String,
+    required: true,
+  },
   bloodGroup: {
     type: String,
     required: true,

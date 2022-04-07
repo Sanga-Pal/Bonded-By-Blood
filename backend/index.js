@@ -11,7 +11,7 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("BloodMates Backend!");
 });
-app.post("/", (req, res) => {
+app.post("/signup/", (req, res) => {
   // console.log(req.body);
   const newUser = new User(req.body);
   newUser.save((err) => {
