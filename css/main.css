@@ -18,11 +18,41 @@ body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  background: url("../assets/bg3.svg");
+  background-color: #111;
+  /* background: url("../assets/bg3.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
+/* navbarcss */
+.custom-shape-divider-top-1649341798 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 0.1;
+}
+
+.custom-shape-divider-top-1649341798 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 281px;
+}
+
+.custom-shape-divider-top-1649341798 .shape-fill {
+  fill: #C34151;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-top-1649341798 svg {
+      width: calc(300% + 1.3px);
+      height: 84px;
+  }
+}
 nav {
   display: flex;
   padding: 0 2%;
@@ -94,6 +124,7 @@ nav::-webkit-scrollbar {
 */
 .svg_type {
   margin-top: 40%;
+  z-index: 100;
 }
 .navbarleft {
   display: flex;
@@ -114,6 +145,7 @@ nav::-webkit-scrollbar {
   background: transparent;
   transition: 800ms;
   font-weight: 400;
+  z-index: 100;
 }
 .navbarright ul {
   display: flex;
