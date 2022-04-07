@@ -18,7 +18,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  background-color: #111;
+  background-color: rgb(29, 28, 28);
   /* background: url("../assets/bg3.svg");
   background-repeat: no-repeat;
   background-size: cover; */
@@ -74,10 +74,10 @@ nav {
   margin-bottom: 100px;
 
 }
-
+/* 
 nav::-webkit-scrollbar {
   display: none;
-}
+} */
 
 /* 
 .navbarleft img {

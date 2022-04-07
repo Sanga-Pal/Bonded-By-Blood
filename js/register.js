@@ -90,8 +90,8 @@ function validate() {
   };
   var json = form["geocoder_input"].value;
   json = json.substring(1, json.length - 1);
+
   var jsonArr = json.split(",");
-  console.log(jsonArr);
   formData["loc"]["coordinates"] = jsonArr;
   console.log(formData);
   // console.log(typeof form["geocoder_input"].value);
