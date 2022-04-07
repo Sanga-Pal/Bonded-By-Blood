@@ -9,10 +9,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  city: {
-    type: String,
-    required: true,
-  },
   contact: {
     type: Number,
     required: true,
@@ -23,8 +19,8 @@ const userSchema = new mongoose.Schema({
     required: true,
     // unique: true,
   },
-  age: {
-    type: Number,
+  dob: {
+    type: Date,
     required: true,
   },
   bloodGroup: {

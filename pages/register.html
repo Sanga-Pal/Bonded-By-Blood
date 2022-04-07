@@ -23,7 +23,7 @@
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
-        <div id="modal-content">
+        <div id="modal-content" class=" animate pop">
         </div>
 
     </div>
@@ -56,10 +56,16 @@
         </div>
     </nav>
     <div id="data">
-        <form id="registrationForm" onsubmit="validate(this)">
-            <input placeholder="First Name" type="text" name="fName" id="fname" required>
-            <input placeholder="Last Name" type="text" name="lName" id="lname" required>
-            <input placeholder="Contact" type="text" name="contact" id="contact" required>
+        <form id="registrationForm">
+            <div class="form_row"><input placeholder="First Name" type="text" name="fName" id="fname" required>
+                <input placeholder="Last Name" type="text" name="lName" id="lname" required>
+            </div>
+            <div class="form_row">
+                <input placeholder="Contact" type="text" name="contact" id="contact" required>
+                <input placeholder="Email Address" type="email" name="email" id="email" required>
+                <input placeholder="Date Of Birth" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"
+                    required>
+            </div>
             <select name="bloodGroup" id="bgrp" form="registrationForm" required>
                 <option value="null">Select Blood Group</option>
                 <option value="A+">A+</option>
@@ -71,6 +77,13 @@
                 <option value="O+">O+</option>
                 <option value="O-">O-</option>
             </select>
+
+            <div class="form_row">
+                <div class="cm"><input placeholder="Height" type="number" name="height" id="height" required>
+                </div>
+                <div class="kg"><input placeholder="Weight" type="number" name="weight" id="weight" required>
+                </div>
+            </div>
             <div placeholder="Location" name="location" required id="geocoder"></div>
             <input style="display:none;" placeholder="geocoder_inp" name="geocoder" id="geocoder_input" required>
             <input type="submit" id="submit" onclick="validate(this)">
