@@ -22,7 +22,7 @@ let elem = document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")[0];
 elem.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     elem.value = "";
-    console.log(result);
+    // console.log(result);
     getData(result);
   }
 });
@@ -36,7 +36,10 @@ function getData(q) {
     },
     body: q,
   })
-    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      response = response.body();
+    })
     .then((json) => console.log(json))
     .catch((err) => console.log(err));
 }

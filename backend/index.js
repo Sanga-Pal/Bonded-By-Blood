@@ -16,8 +16,12 @@ app.post("/signup/", (req, res) => {
   const newUser = new User(req.body);
   newUser.save((err) => {
     if (err) {
-      res.status(500).json({ contact: err.errors?.contact?.name,
-      email : err.errors?.email?.name });
+      res
+        .status(500)
+        .json({
+          contact: err.errors?.contact?.name,
+          email: err.errors?.email?.name,
+        });
       console.log(err);
     } else {
       res.json({
@@ -29,25 +33,27 @@ app.post("/signup/", (req, res) => {
 
 app.post("/search/", (req, res) => {
   // console.log(req.body);
-  const coords = (req.body);
+  const coords = req.body;
   console.log(coords);
-  fetch(coords);
+  var resp = fetch(coords);
+  res.send(JSON.stringify(resp))
 });
 
-async function fetch(coords){
+async function fetch(coords) {
   const data = await User.find({
     loc: {
-        $near: {
-            $geometry: {
-                type: 'Point',
-                coordinates: coords
-            },
-            $maxDistance : 60000,
-            $minDistance : 0
-        }
-    }
-});
-console.log(data);
+      $near: {
+        $geometry: {
+          type: "Point",
+          coordinates: coords,
+        },
+        $maxDistance: 60000,
+        $minDistance: 0,
+      },
+    },
+  });
+  console.log(data);
+  return data;
 }
 
 app.listen(process.env.PORT || 8000, async () => {
