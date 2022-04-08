@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1Give</title>
-    <link rel="stylesheet" href="./css/main.css" />
-
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <title>Contact Us</title>
 </head>
-
 <body>
     <nav>
         <div class="custom-shape-divider-top-1649341798">
@@ -30,7 +28,7 @@
                     <animate attributeName="d" from="m0,110 h0" to="m0,110 h1100" dur="4s" begin="0s"
                         repeatCount="indefinite" />
                 </path>
-                <text font-size="100"  fill='#fff'>
+                <text class="font"font-size="100"  fill='#fff'>
                     <textPath xlink:href="#path">BONDED-BY-BLOOD
                     </textPath>
                 </text>
@@ -45,25 +43,27 @@
             </ul>
         </div>
     </nav>
-    <div class="innercontainer">
-        <div class="leftcont">
-            <p class="paraleft">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic incidunt molestias quia, soluta
-                asperiores rerum suscipit possimus distinctio corporis error culpa laborum debitis exercitationem
-                repudiandae adipisci et perspiciatis veritafficiis ab enim nesciunt porro ea, alias reiciendis
-                reprehenderit harum, illum numquam!
-            </p>
-            <img class="leftimg" src="./assets/blood.svg" alt="blood" width="200px">
-        </div>
-        <div  class="rightcont">
-            <div onclick ="location.href='/pages/locate.html'" class="circle circle1">
-                   <P class="idk">Find Donors</P>
-                </div>
-                <div onclick ="location.href='/pages/register.html'"class="circle circle2">
-                   <P class="idk"> Donate  </P>
-                </div>
-        </div>
-    </div>
-</body>
+    <div class="conatiner1"></div>
+            <div class="conatiner2"></div>
+            <div class="conatiner3"></div>
+            <div class="conatiner4"></div>
+    <div class="contactsection">
+        <div class="leftt">
+        <h1>Contact Us.</h1>
+        <img src="/assets/contactus.svg"
+         alt="contact us"
+         height="200px">
+         </div>
+        <div class="border"></div>
 
+        <form action="contact-form" action="contact.html" method="post">
+         <input type="text" class="contactformtext" placeholder="Your Name">
+         <input type="email" class="contactformtext" placeholder="Email Address">
+         <input type="text" class="contactformtext" placeholder="Contact Number">
+          <textarea class="contactformtext" placeholder="Enter your message"></textarea>
+          <input type="submit" class="contactformbtn" value="Send">
+        </form>
+    </div>
+
+</body>
 </html>
