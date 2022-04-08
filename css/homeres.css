@@ -1,0 +1,47 @@
+@media (max-width: 767px) { 
+    .innercontainer{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+        justify-content: center;
+    }
+    .leftcont {
+            width: 100%;
+            color: white;
+            box-sizing: border-box;
+            text-align: justify;
+            line-height: 1.4em;
+     }
+     .navbarright{
+         display:none;
+     }
+     .leftimg{
+         margin:auto;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+    }
+    .rightcont{
+        width:100%;
+    }
+    .circle{
+        display: flex;
+        background-color: rgba(206, 170, 170, 0.581);
+
+        width:100px;
+        box-shadow: rgba(255, 255, 255, 0.392) 0px 7px 29px 0px;
+        cursor: pointer;
+    }
+    .circle1{
+        margin-left:0;
+        height: 100px;
+      
+        transform:scale(1);
+      }
+      .circle2{
+          height:100px;
+      }
+
+
+}
