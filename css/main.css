@@ -15,8 +15,8 @@ C62368 */
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   overflow-x: hidden;
   background-color: rgb(29, 28, 28);
   /* background: url("../assets/bg3.svg");
@@ -32,7 +32,6 @@ body {
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  z-index: 0.1;
 }
 
 .custom-shape-divider-top-1649341798 svg {
@@ -43,7 +42,8 @@ body {
 }
 
 .custom-shape-divider-top-1649341798 .shape-fill {
-  fill: #C34151;
+  fill: #9e2e3b;
+  z-index: 0.1;
 }
 
 /** For mobile devices **/
@@ -64,7 +64,6 @@ nav {
   top: 0;
   left: 0%;
   height: 75px;
-  z-index: 100;
   background: linear-gradient(rgba(31, 13, 51, 0.452), transparent);
   background-repeat: no-repeat;
   background-size: cover;
