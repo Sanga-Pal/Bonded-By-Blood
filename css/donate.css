@@ -130,10 +130,3 @@ mapboxgl-ctrl {
 }
 
 
-/*scrollbar*/
-::-webkit-scrollbar{
-  width: 5px;
-}
- ::-webkit-scrollbar-thumb{
-  background-color: rgb(191, 31, 95);
-}
