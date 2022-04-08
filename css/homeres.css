@@ -1,4 +1,4 @@
-@media (max-width: 767px) { 
+@media (max-width: 700px) { 
     .innercontainer{
         display:flex;
         flex-direction: column;
@@ -24,23 +24,44 @@
     }
     .rightcont{
         width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 40px;
     }
     .circle{
         display: flex;
-        background-color: rgba(206, 170, 170, 0.581);
+        background-color: rgba(110, 70, 70, 0.581);
+        margin: 10px 10px;
+        align-self: center;
+        justify-content: center;
 
         width:100px;
-        box-shadow: rgba(255, 255, 255, 0.392) 0px 7px 29px 0px;
+       
         cursor: pointer;
     }
     .circle1{
         margin-left:0;
         height: 100px;
-      
+        width: 70%;
         transform:scale(1);
+        margin: 10px 10px;
+        border-radius:5px;
+        box-shadow: rgba(235, 212, 187, 0.2) 0px 8px 24px;
       }
       .circle2{
           height:100px;
+          width:70%;
+          margin: 0;
+          border-radius: 5px;
+          box-shadow: rgba(235, 212, 187, 0.2) 0px 8px 24px;
+          margin: 10px 10px;
+      }
+      .idk{
+          display:flex;
+          align-items: center;
+          top:auto;
       }
 
 

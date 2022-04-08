@@ -261,10 +261,6 @@ nav::-webkit-scrollbar {
   font-size: 32px;
   font-weight: 600;
 }
-/* .idk a{
-  text-decoration: none;
-  color:white;
-} */
 
 @media screen and (max-width: 768px) {
   nav {
