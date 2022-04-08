@@ -26,6 +26,30 @@ app.post("/signup/", (req, res) => {
     }
   });
 });
+
+app.post("/search/", (req, res) => {
+  // console.log(req.body);
+  const coords = (req.body);
+  console.log(coords);
+  fetch(coords);
+});
+
+async function fetch(coords){
+  const data = await User.find({
+    loc: {
+        $near: {
+            $geometry: {
+                type: 'Point',
+                coordinates: coords
+            },
+            $maxDistance : 60000,
+            $minDistance : 0
+        }
+    }
+});
+console.log(data);
+}
+
 app.listen(process.env.PORT || 8000, async () => {
   console.log(`Listening at port ${process.env.PORT || 8000}`);
 });
