@@ -163,7 +163,7 @@ nav::-webkit-scrollbar {
 .navbarright ul li a {
   text-decoration: none;
   color: white;
-  padding: 0 40px;
+  margin: 0 40px;
   background: transparent;
   min-width: fit-content;
   white-space: nowrap;
@@ -177,91 +177,8 @@ nav::-webkit-scrollbar {
   color: var(--yellow);
   font-weight: bold;
   pointer-events: none;
+  border-bottom: 3px solid;
 }
-.innercontainer {
-  display: flex;
-  flex-direction: row;
-  margin-top: 97px;
-  padding: 0 5px;
-}
-
-.leftcont {
-  width: 35%;
-  padding: 0 40px;
-  margin-top: 40px;
-  margin-left: 10px;
-  color: white;
-  /* background-color: rgba(255, 255, 255, 0.082); */
-  /* border: solid 1px rgba(255, 255, 255, 0.137); */
-  box-sizing: border-box;
-  border-radius: 8px;
-  /* box-shadow: #c6236738 0px 3px 8px; */
-  text-align: left;
-  line-height: 1.4em;
-}
-.rightcont {
-  width: 100%;
-}
-
-.paraleft {
-  padding: 20px 3px;
-  display: flex;
-  text-align: left;
-  justify-content: right;
-  align-items: flex-end;
-}
-.leftimg {
-  margin: 2px 25%;
-}
-
-.circle {
-  border-radius: 50%;
-  background-color: rgba(206, 170, 170, 0.581);
-  height: 100px;
-  width: 100px;
-  box-shadow: rgba(255, 255, 255, 0.392) 0px 7px 29px 0px;
-  cursor: pointer;
-}
-.circle1 {
-  margin-left: 35%;
-  height: 281px;
-  width: 281px;
-  transform: scale(1);
-}
-.circle2 {
-  margin-top: -10%;
-  margin-left: 50%;
-  height: 282px;
-  width: 282px;
-  background-color: rgba(160, 130, 130, 0.581);
-}
-.circle1:hover {
-  transform: scale(1.25);
-  transition: 400ms ease;
-}
-.circle1:active {
-  transform: scale(0.9);
-  transition: 400ms ease;
-}
-.circle2:hover {
-  transform: scale(1.2);
-  transition: 400ms ease;
-}
-.circle2:active {
-  transform: scale(0.9);
-  transition: 400ms ease;
-}
-.idk {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 45%;
-  color: rgb(239, 227, 227);
-  font-size: 32px;
-  font-weight: 600;
-}
-
 @media screen and (max-width: 768px) {
   nav {
     flex-direction: column;
