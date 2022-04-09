@@ -26,7 +26,7 @@ elem.addEventListener("keyup", function (event) {
     getData(result);
   }
 });
-
+var db=[];
 function getData(q) {
   // console.log(q);
   fetch("http://localhost:8000/search/", {
@@ -36,10 +36,12 @@ function getData(q) {
     },
     body: q,
   })
-    .then((response) => {
-      console.log(response);
-      response = response.body();
-    })
-    .then((json) => console.log(json))
-    .catch((err) => console.log(err));
+    .then((res) => res.json())
+    .then((data) => (setPlotter(data.response)));
+  }
+
+
+function setPlotter(data){
+  db=data;
+  console.log(db[0]?.dob);
 }

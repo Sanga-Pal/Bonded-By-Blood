@@ -105,7 +105,7 @@ body {
   box-sizing: border-box;
   margin: 9px 0;
   border: 0;
-  background: rgb(15, 14, 14);
+  background: rgba(15, 14, 14, 0.787);
   padding: 16px 60px;
   border-radius: 4px;
   outline: none;
@@ -140,11 +140,11 @@ textarea::-webkit-scrollbar-thumb {
   padding: 12px 40px;
   color: white;
   cursor: pointer;
-  transition: 500ms;
+  transition: 100ms;
 }
 .contactformbtn:hover {
   box-shadow: 0 0 10px 4px rgba(207, 144, 144, 0.347);
-  background-color: red;
+  background-color: rgb(178, 43, 43);
 }
 @keyframes bwoo {
   0% {
