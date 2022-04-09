@@ -32,7 +32,7 @@ app.post("/signup/", (req, res) => {
 });
 
 app.post("/search/", async (req, res) => {
-  // console.log(JSON.stringify(req.body));
+  console.log((req.body));
   // console.log(req.body.bgrp);
   // console.log((req.body.bgrp.split(",")));
   var resp = await fetch(req.body);
