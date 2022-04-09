@@ -1,3 +1,4 @@
+import API from "./config";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY29kZS1zb2hhbSIsImEiOiJjbDFsdmU0MjUwZWlpM2pvYnZmem16dG1kIn0.UX8hn1EN63EqElkp8D8Yhg";
 const geocoder = new MapboxGeocoder({
@@ -39,7 +40,7 @@ function getData() {
   // req = JSON.stringify(req);
   req=`{\r\n    \"bgrp\": \"[${bgrp}]\",\r\n\"coords\": [${JSON.parse(result)}],\r\n\"dist\": \"${dist}\"\r\n}`  // req.replace(/[\r\n]+/gm, "");
   // console.log(req);
-  fetch("http://localhost:8000/search/", {
+  fetch(API+"search/", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

@@ -1,3 +1,4 @@
+import API from "./config";
 function inComplete(form) {
   for (var key in form) {
     if (form[key] === "" || form[key] === null) return true;
@@ -53,7 +54,7 @@ function useModal(json, formData, form) {
 }
 function api_call(formData, form) {
   console.log("api_method");
-  fetch("http://localhost:8000/signup/", {
+  fetch(API+"signup/", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
