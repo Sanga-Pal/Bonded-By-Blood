@@ -1,12 +1,14 @@
 const express = require("express");
 require("dotenv").config();
+var bodyParser = require("body-parser");
 require("./db/dbconfig");
 var cors = require("cors");
 const app = express();
 const User = require("./models/user");
 // const Id =require("./models/mock");
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
+// app.use(bodyParser().json);
 app.use(cors());
 app.get("/", (req, res) => {
   res.send("BloodMates Backend!");
@@ -30,28 +32,35 @@ app.post("/signup/", (req, res) => {
 });
 
 app.post("/search/", async (req, res) => {
-  // console.log(req.body);
-  const coords = req.body;
-  // console.log(coords);
-  var resp = await fetch(coords);
+  // console.log(JSON.stringify(req.body));
+  // console.log(req.body.bgrp);
+  // console.log((req.body.bgrp.split(",")));
+  var resp = await fetch(req.body);
   // console.log(resp)
-  res.send({response : resp});
+  // res.send(req.body);
+  res.send({ response: resp });
 });
 
-async function fetch(coords) {
+async function fetch(obj) {
+  // console.log(typeof obj[0],obj)
+  // console.log(typeof obj.coords[0])
+  // console.log(parseInt(obj.dist));
   const data = await User.find({
     loc: {
       $near: {
         $geometry: {
           type: "Point",
-          coordinates: coords,
+          coordinates: obj.coords,
         },
-        $maxDistance: 1000000,
+        $maxDistance: obj.dist,
         $minDistance: 0,
       },
     },
+    bloodGroup: {
+      $in: obj.bgrp.slice(1,-1).split(","),
+    },
   });
-  // console.log(data);
+  console.log(data);
   return data;
 }
 

@@ -10,7 +10,6 @@ function useModal(json, formData, form) {
   var modal = document.getElementById("myModal");
   var modalInner = document.getElementById("modal-content");
   modalInner.innerHTML = "";
-  var cls = document.getElementsByClassName("close")[0];
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";

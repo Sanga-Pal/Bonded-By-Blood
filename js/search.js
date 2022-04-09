@@ -19,29 +19,89 @@ geocoder.on("result", (e) => {
 //     results.innerText = "";
 // });
 let elem = document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")[0];
-elem.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    elem.value = "";
-    // console.log(result);
-    getData(result);
-  }
-});
-var db=[];
-function getData(q) {
-  // console.log(q);
+// elem.addEventListener("keyup", function (event) {
+//   if (event.keyCode === 13) {
+//     elem.value = "";
+//     // console.log(result);
+//     getData(result);
+//   }
+// });
+function getData() {
+  let dist = document.getElementById("range").value;
+  let bgrp = document.getElementById("bgrp").value.split(",");
+  console.log(bgrp)
+  console.log(typeof bgrp, bgrp);
+  // var req = {
+  //   "coords": JSON.parse(result),
+  //   'dist': dist,
+  //   "bgrp": bgrp,
+  // };
+  // req = JSON.stringify(req);
+  req=`{\r\n    \"bgrp\": \"[${bgrp}]\",\r\n\"coords\": [${JSON.parse(result)}],\r\n\"dist\": \"${dist}\"\r\n}`  // req.replace(/[\r\n]+/gm, "");
+  // console.log(req);
   fetch("http://localhost:8000/search/", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
     },
-    body: q,
+    body: req,
   })
     .then((res) => res.json())
-    .then((data) => (setPlotter(data.response)));
+    .then((data) => setPlotter(data.response))
+    .catch((err) => setPlotter([]));
+}
+function getAge(dateString) 
+{
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+    return age;
+}
+function setPlotter(data) {
+  var root = document.getElementById("search_result");
+  console.log(data.length);
+  if (data[0] == undefined) {
+    var modal = document.getElementById("myModal");
+    var modalInner = document.getElementById("modal-content");
+    modalInner.innerHTML = "";
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+    modal.style.display = "block";
+    modalInner.style.color = "yellow";
+    var p = document.createElement("p");
+    p.innerText = "No mates found! Help us by expanding our network!!";
+    modalInner.appendChild(p);
+  } else {
+    const htmlString = data
+      .map((data) => {
+        return `
+        <div class="card">
+        <div class="card_name">
+            ${data.firstName+" "+data.lastName} <span class="sex">(${data.sex})</span>
+        </div>
+        <div class="age">
+            Age : ${getAge(data.dob)}
+        </div>
+        <div class="bms"><span>Height : ${data.height} cms</span><span>Weight : ${data.weight} kg</span></div>
+        <div class="contact">
+            <a href="tel:${data.contact}">&phone;${data.contact}</a>
+            <a href="mailTo:${data.email}">&#x1F4E7;${data.email}</a>
+        </div>
+        <div class="type">
+            ${data.bloodGroup}
+        </div>
+    </div>
+      `;
+      })
+      .join("");
+    root.innerHTML = htmlString;
   }
-
-
-function setPlotter(data){
-  db=data;
-  console.log(db[0]?.dob);
 }

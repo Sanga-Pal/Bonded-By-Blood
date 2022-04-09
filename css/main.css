@@ -18,9 +18,6 @@ body {
   /* height: 100vh;
   width: 100vw; */
   background-color: rgb(29, 28, 28);
-  /* background: url("../assets/bg3.svg");
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 /* navbarcss */
@@ -146,6 +143,7 @@ nav::-webkit-scrollbar {
 }
 .navbarright ul {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;

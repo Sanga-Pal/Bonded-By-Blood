@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locate @ BBB</title>
+    <!-- pure css -->
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/search.css" />
+    <!-- mapbox -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
-
+    <!-- Animate.style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -69,7 +72,52 @@
             </ul>
         </div>
     </nav>
-    <div placeholder="Location" name="location" required id="geocoder"></div>
+    <form id="search_module">
+        <div id="row">
+            <div placeholder="Location" name="location" required id="geocoder"></div>
+            <select name="bloodGroup" id="bgrp" form="subForm" required>
+                <option value="null">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A+,A-,B+,B-,AB+,AB-,O+,O-">All</option>
+            </select>
+        </div>
+        <div id="row">
+            <select required name="range" id="range" form="subForm" required>
+                <option value="null">Select Range (in kms)</option>
+                <option value="5000">5</option>
+                <option value="10000">10</option>
+                <option value="20000">20</option>
+                <option value="99999999">>20</option>
+            </select>
+            <input type="submit" value="Find" name="submit" form="subForm" onclick="getData()">
+        </div>
+    </form>
+    <div id="search_result">
+        <!-- <div class="card">
+            <div class="card_name">
+                SOHAM CHOWDHURY <span class="sex">(M)</span>
+            </div>
+            <div class="age">
+                20
+            </div>
+            <div class="bms"><span>Height</span><span>Weight</span></div>
+            <div class="contact">
+                <a href="tel:(+91)6294750719">(+91)6204750719</a>
+                <a href="mailTo:sc2412@it.jgec.ac.in">sc2412@it.jgec.ac.in</a>
+            </div>
+            <div class="type">
+                O-
+            </div>
+        </div> -->
+    </div>
+    </div>
 
     <script src="../js/search.js"></script>
 </body>
