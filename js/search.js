@@ -1,4 +1,4 @@
-import API from "./config";
+const API='https://bonded-by-blood.herokuapp.com/';
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY29kZS1zb2hhbSIsImEiOiJjbDFsdmU0MjUwZWlpM2pvYnZmem16dG1kIn0.UX8hn1EN63EqElkp8D8Yhg";
 const geocoder = new MapboxGeocoder({

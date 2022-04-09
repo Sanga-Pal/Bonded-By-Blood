@@ -1,4 +1,4 @@
-import API from "./config";
+const API='https://bonded-by-blood.herokuapp.com/';
 function inComplete(form) {
   for (var key in form) {
     if (form[key] === "" || form[key] === null) return true;
