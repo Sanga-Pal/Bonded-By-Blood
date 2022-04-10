@@ -1,5 +1,5 @@
-// const API='https://bonded-by-blood.herokuapp.com/';
-const API = "http://localhost:8000/";
+const API='https://bonded-by-blood.herokuapp.com/';
+// const API = "http://localhost:8000/";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY29kZS1zb2hhbSIsImEiOiJjbDFsdmU0MjUwZWlpM2pvYnZmem16dG1kIn0.UX8hn1EN63EqElkp8D8Yhg";

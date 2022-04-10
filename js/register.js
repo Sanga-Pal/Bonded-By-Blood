@@ -1,5 +1,5 @@
-// const API = "https://bonded-by-blood.herokuapp.com/";
-const API = "http://localhost:8000/";
+const API = "https://bonded-by-blood.herokuapp.com/";
+// const API = "http://localhost:8000/";
 function getAge(dateString) 
 {
   console.log(dateString);
