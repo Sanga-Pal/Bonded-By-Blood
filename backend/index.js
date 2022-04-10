@@ -1,6 +1,5 @@
 const express = require("express");
 require("dotenv").config();
-var bodyParser = require("body-parser");
 require("./db/dbconfig");
 var cors = require("cors");
 const app = express();
@@ -11,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser().json);
 app.use(cors());
 app.get("/", (req, res) => {
-  res.send("BloodMates Backend!");
+  res.send("Bonded By Blood Backend!");
 });
 app.post("/signup/", (req, res) => {
   // console.log(req.body);
@@ -60,7 +59,7 @@ async function fetch(obj) {
       $in: obj.bgrp.slice(1,-1).split(","),
     },
   });
-  console.log(data);
+  console.log(data.length);
   return data;
 }
 

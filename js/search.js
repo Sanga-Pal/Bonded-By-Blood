@@ -1,4 +1,6 @@
-const API='https://bonded-by-blood.herokuapp.com/';
+// const API='https://bonded-by-blood.herokuapp.com/';
+const API = "http://localhost:8000/";
+
 mapboxgl.accessToken =
   "pk.eyJ1IjoiY29kZS1zb2hhbSIsImEiOiJjbDFsdmU0MjUwZWlpM2pvYnZmem16dG1kIn0.UX8hn1EN63EqElkp8D8Yhg";
 const geocoder = new MapboxGeocoder({
@@ -8,7 +10,7 @@ const geocoder = new MapboxGeocoder({
 });
 
 geocoder.addTo("#geocoder");
-var result;
+var result=null;
 // // Get the geocoder results container.
 // Add geocoder result to container.
 geocoder.on("result", (e) => {
@@ -27,11 +29,19 @@ let elem = document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")[0];
 //     getData(result);
 //   }
 // });
+let loader = document.getElementById("search_loader");
 function getData() {
+  loader.style.display = "block";
   let dist = document.getElementById("range").value;
   let bgrp = document.getElementById("bgrp").value.split(",");
-  console.log(bgrp)
-  console.log(typeof bgrp, bgrp);
+  // console.log(bgrp);
+  // console.log(result)
+  if(dist=="null" || bgrp[0] == 'null' || result==null){
+    setPlotter("invalid");
+    return;
+  }
+  // console.log(bgrp)
+  // console.log(typeof bgrp, bgrp);
   // var req = {
   //   "coords": JSON.parse(result),
   //   'dist': dist,
@@ -65,8 +75,23 @@ function getAge(dateString)
 }
 function setPlotter(data) {
   var root = document.getElementById("search_result");
-  console.log(data.length);
-  if (data[0] == undefined) {
+  // console.log(data.length);
+  if(data=="invalid"){
+    var modal = document.getElementById("myModal");
+    var modalInner = document.getElementById("modal-content");
+    modalInner.innerHTML = "";
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+    modal.style.display = "block";
+    modalInner.style.color = "yellow";
+    var p = document.createElement("p");
+    p.innerText = "Invalid Search. Fill Again!";
+    modalInner.appendChild(p);
+  }
+  else if (data[0] == undefined) {
     var modal = document.getElementById("myModal");
     var modalInner = document.getElementById("modal-content");
     modalInner.innerHTML = "";
@@ -105,4 +130,5 @@ function setPlotter(data) {
       .join("");
     root.innerHTML = htmlString;
   }
+  loader.style.display = "none";
 }

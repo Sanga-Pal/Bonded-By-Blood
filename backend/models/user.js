@@ -12,12 +12,13 @@ const userSchema = new mongoose.Schema({
   contact: {
     type: Number,
     required: true,
-    // unique: true,
+    unique: true,
   },
   email: {
     type: String,
     required: true,
-    // unique: true,
+    match: [/.+\@.+\..+/ , "Please enter a valid email address"],
+    unique: true,
   },
   dob: {
     type: Date,
@@ -34,21 +35,23 @@ const userSchema = new mongoose.Schema({
   height: {
     type: Number,
     required: true,
+    min: [1, "Height cannot be less than 1"],
   },
   weight: {
     type: Number,
     required: true,
+    min: [1, "Weight cannot be less than 1"],
   },
   loc: { type: { type: String }, coordinates: [Number] },
 });
 userSchema.path("contact").validate(async (contact) => {
-  const ct=await mongoose.models.User.countDocuments({
+  const ct = await mongoose.models.User.countDocuments({
     contact,
   });
   return !ct;
 }, "Contact Exists");
 userSchema.path("email").validate(async (email) => {
-  const ct=await mongoose.models.User.countDocuments({
+  const ct = await mongoose.models.User.countDocuments({
     email,
   });
   return !ct;
