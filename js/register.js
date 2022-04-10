@@ -1,17 +1,15 @@
 const API = "https://bonded-by-blood.herokuapp.com/";
 // const API = "http://localhost:8000/";
-function getAge(dateString) 
-{
+function getAge(dateString) {
   console.log(dateString);
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
-    {
-        age--;
-    }
-    return age;
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
 }
 function inComplete(form) {
   for (var key in form) {
@@ -19,8 +17,13 @@ function inComplete(form) {
     if (form[key] === "" || form[key] === null || form[key] === "null")
       return true;
   }
-  if(!form['email'].match(/.+\@.+\..+/))return true;
-  else if(form['height']<=0 || form['weight']<=0 || getAge(form['dob'])<18)return true;
+  if (!form["email"].match(/.+\@.+\..+/)) return true;
+  else if (
+    form["height"] <= 0 ||
+    form["weight"] <= 0 ||
+    getAge(form["dob"]) < 18
+  )
+    return true;
   return false;
 }
 function useModal(json, formData, form) {
@@ -35,13 +38,12 @@ function useModal(json, formData, form) {
     }
   };
   modal.style.display = "block";
-  if(json === null){
+  if (json === null) {
     modalInner.style.color = "yellow";
     var p = document.createElement("p");
     p.innerText = "Please fill all fields properly!";
     modalInner.appendChild(p);
-  }
-  else if (json.msg === "data saved") {
+  } else if (json.msg === "data saved") {
     modalInner.style.color = "green";
     var p = document.createElement("p");
     p.innerText = "Data Saved Successfully";
@@ -74,6 +76,8 @@ function useModal(json, formData, form) {
     }
     console.log(formData);
   }
+  clock.style.display = "none";
+  bg.style.display = "none";
 }
 function api_call(formData, form) {
   console.log("api_method");
@@ -94,7 +98,11 @@ let reg_form = document.querySelector("#submit");
 reg_form.addEventListener("click", function (event) {
   event.preventDefault(); //prevent useless refresh
 });
+let clock = document.getElementById("loader");
+let bg = document.getElementById("loader_div");
 function validate() {
+  clock.style.display = "block";
+  bg.style.display = "block";
   let form = document.forms["registrationForm"];
   var formData = {
     firstName: form["fname"].value,
@@ -118,10 +126,9 @@ function validate() {
   formData["loc"]["coordinates"] = jsonArr;
   // console.log(formData);
   // console.log(typeof form["geocoder_input"].value);
-  if(!inComplete(formData)){
-  api_call(formData, form);
-  }
-  else{
+  if (!inComplete(formData)) {
+    api_call(formData, form);
+  } else {
     useModal(null);
   }
 }

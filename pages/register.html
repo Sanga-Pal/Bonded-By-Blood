@@ -15,6 +15,10 @@
 </head>
 
 <body>
+    <div id="loader_div">
+        <img id="loader" src="../assets/laoder_clock.svg">
+    </div>
+
     <script
         src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet"
@@ -79,8 +83,8 @@
             <div class="form_row">
                 <input placeholder="Contact" type="tel" name="contact" id="contact" required>
                 <input placeholder="Email Address" type="email" name="email" id="email" required>
-                <input placeholder="Date Of Birth (Must be 18+)" class="textbox-n" type="text" onfocus="(this.type='date')" id="date"
-                    required>
+                <input placeholder="Date Of Birth (Must be 18+)" class="textbox-n" type="text"
+                    onfocus="(this.type='date')" id="date" required>
             </div>
             <div class="form_row">
                 <select name="sex" id="sex" form="registrationForm" required>

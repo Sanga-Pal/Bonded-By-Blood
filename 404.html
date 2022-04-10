@@ -12,39 +12,58 @@
 <style>
     body {
         background: url(https://flevix.com/wp-content/uploads/2019/12/bubble-animated-background.svg) no-repeat center fixed;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         background-size: cover;
         overflow: hidden;
         color: aliceblue;
+        margin-top: 20px;
     }
 
     code>h1 {
         margin: auto;
         width: fit-content;
     }
-    a{
+
+    .links a {
         text-decoration: none;
-        color : aliceblue;
-        background-color: rgba(255,255,255,0.2);
+        color: aliceblue;
         padding: 20px;
         border-radius: 20px;
+        width: 150px;
+        text-align: center;
+        margin: 5px;
+        box-shadow: inset -50px 50px 45px #000e1f,
+            inset 50px -50px 45px #00162f;
     }
-    .links{
-        width: 100%;
+
+    .links a:hover {
+        /* background-color: rgba(0,0,0,0); */
+        background-color: rgba(255, 255, 255, 0.06);
+        /* box-shadow: inset -50px 50px 45px #000e1f,
+            inset 50px -50px 45px #00162f; */
+        box-shadow: none;
+    }
+
+    .links {
+        width: 100vw;
         display: flex;
         justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 20px;
     }
-    .head{
-        margin-top: 10%;
+
+    .head {
         margin-left: 10%;
     }
 </style>
 
 <body>
     <code>
-    <h1>ERROR 404</h1>
-    <h1>RESOURCE NOT FOUND</h1>
+    <h1>OOPS! IT SEEMS YOU TOOK A WRONG TURN :/</h1>
+    <h1>RESOURCE NOT FOUND !</h1>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_AYcZiy.json" mode="bounce" background="transparent"  speed="1"  style="width: 300px; height: 300px; margin:auto;" loop  autoplay></lottie-player>
     <div class="redirects">
         <div class="head"><h1>GO BACK</h1></div>
         <div class="links">
@@ -52,6 +71,7 @@
             <a href="./pages/register.html">❤️DONATE</a>
             <a href="./PAGES/locate.html">🔎FIND A DONOR</a>
             <a href="./pages/contact.html">📞CONTACT US</a>
+            <a href="./pages/about.html">💻ABOUT US</a>
         </div>
     </div>
 </code>
