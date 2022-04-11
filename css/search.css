@@ -67,27 +67,30 @@ input {
   }
 }
 #search_module {
-  display: flex;
+  display: none;
+  flex-direction: column;
   margin: auto;
-  flex-wrap: wrap;
   min-width: 300px;
   width: 60vw;
   justify-content: center;
 }
-#row {
-  margin: 20px;
-  /* background-color: blue; */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
+body> .row{
+  margin-top: 120px;
 }
-
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 60vw;
+  margin: auto;
+}
 select,
 input {
   height: 35px;
-  margin: 20px auto;
+  margin: 5px auto;
   font-size: 10px;
   color: aliceblue;
-  min-width: 20px;
+  width: 200px;
   background-color: antiquewhite;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -95,10 +98,21 @@ input {
 select option {
   background-color: rgba(0, 0, 0, 0.855);
 }
+#organ, #bgrp{
+  display: none;
+}
+
 #search_result{
-  display: flex;
+  display: none;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  width: 90vw;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: rgba(228, 139, 139, 0.2);
 }
 #search_loader{
   width: 50px;
@@ -115,7 +129,7 @@ select option {
   flex-direction: column;
   padding: 5px;
   justify-content: center;
-  background-color: rgba(114, 114, 114, 0.1);
+  background-color: rgb(37, 37, 37);
   border: inset 10px rgba(114, 114, 114, 0.1);
 }
 #search_result .card * {
@@ -140,9 +154,4 @@ select option {
   text-decoration: none;
   color :turquoise;
   word-break: break-all;
-}
-@media screen and (max-width: 826px) {
-  #row:last-child {
-    margin-top: -50px;
-  }
 }

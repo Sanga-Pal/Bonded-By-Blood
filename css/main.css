@@ -68,54 +68,6 @@ nav {
   justify-content: space-between;
   margin-bottom: 100px;
 }
-/* 
-nav::-webkit-scrollbar {
-  display: none;
-} */
-
-/* 
-.navbarleft img {
-    background: transparent
-}
-
-.navbarleft p {
-    background: transparent;
-    margin-right: 25%;
-    font-weight: bolder;
-}
-
-
-
-.navbarleft ul li {
-    padding-top: 31%;
-    color: blanchedalmond;
-    font-size: 35px;
-    list-style: none;
-    font-family: sans-serif;
-}
-
-.navbarleft li span {
-    position: relative;
-}
-
-.navbarleft li span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #C62368;
-    border-left: 2px solid blanchedalmond;
-    animation: typing 2s steps(15) infinite;
-}
-
-@keyframes typing {
-    100% {
-        left: 100%;
-        margin: 0 -35px 0 35px;
-    }
-}
-*/
 .svg_type {
   margin-top: 40%;
   z-index: 100;
@@ -149,7 +101,7 @@ nav::-webkit-scrollbar {
   justify-content: flex-end;
   background: transparent;
   font-size: 15px;
-  width: 100%;
+  width: 60vw;
 }
 
 .navbarright ul li {
@@ -161,7 +113,7 @@ nav::-webkit-scrollbar {
 .navbarright ul li a {
   text-decoration: none;
   color: white;
-  margin: 0 40px;
+  margin: 0 40px 5px 0px;
   background: transparent;
   min-width: fit-content;
   white-space: nowrap;
@@ -170,6 +122,29 @@ nav::-webkit-scrollbar {
 .navbarright ul li a:hover {
   transition: 200ms;
   color: pink;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 #active {
   color: var(--yellow);

@@ -14,8 +14,10 @@ function getAge(dateString) {
 function inComplete(form) {
   for (var key in form) {
     // console.log(form[key]);
-    if (form[key] === "" || form[key] === null || form[key] === "null")
+    if (form[key] === "" || form[key] === null || form[key] === "null") {
+      if(key === "organs")continue;
       return true;
+    }
   }
   if (!form["email"].match(/.+\@.+\..+/)) return true;
   else if (
@@ -100,7 +102,7 @@ reg_form.addEventListener("click", function (event) {
 });
 let clock = document.getElementById("loader");
 let bg = document.getElementById("loader_div");
-function validate() {
+async function validate() {
   clock.style.display = "block";
   bg.style.display = "block";
   let form = document.forms["registrationForm"];
@@ -118,6 +120,8 @@ function validate() {
       type: "Point",
       coordinates: form["geocoder_input"]?.value,
     },
+    organs: await getOrgans(),
+    organDonor : organs.length === 0 ? false:true,
   };
   var json = form["geocoder_input"].value;
   json = json.substring(1, json.length - 1);
@@ -131,4 +135,21 @@ function validate() {
   } else {
     useModal(null);
   }
+}
+/** organ listing */
+let organModal = document.getElementById("organModal");
+function toggleOrganList() {
+  organModal.style.display =
+    organModal.style.display === "flex" ? "none" : "flex";
+}
+function getOrgans() {
+  var organs = [];
+  var checkboxes = document.getElementsByClassName("modal__checkbox");
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      organs.push(checkboxes[i].value);
+    }
+  }
+  console.log(organs);
+  return organs;
 }

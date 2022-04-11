@@ -18,7 +18,36 @@
     <div id="loader_div">
         <img id="loader" src="../assets/laoder_clock.svg">
     </div>
-
+    <div id="organModal">
+        <form id="organs">
+            <label for="Heart"><input type="checkbox" id="Heart" class="modal__checkbox" value="Heart" />Heart</label>
+            <label for="Kidney"><input type="checkbox" id="Kidney" class="modal__checkbox"
+                    value="Kidney" />Kidney</label>
+            <label for="Liver"><input type="checkbox" id="Liver" class="modal__checkbox" value="Liver" />Liver</label>
+            <label for="Lung"><input type="checkbox" id="Lung" class="modal__checkbox" value="Lung" />Lung</label>
+            <label for="Pancreas"><input type="checkbox" id="Pancreas" class="modal__checkbox"
+                    value="Pancreas" />Pancreas</label>
+            <label for="Intestines"><input type="checkbox" id="Intestines" class="modal__checkbox"
+                    value="Intestines" />Intestines</label>
+            <label for="Hands"><input type="checkbox" id="Hands" class="modal__checkbox" value="Hands" />Hands</label>
+            <label for="Face"><input type="checkbox" id="Face" class="modal__checkbox" value="Face" />Face</label>
+            <label for="Corneas"><input type="checkbox" id="Corneas" class="modal__checkbox"
+                    value="Corneas" />Corneas</label>
+            <label for="Skin"><input type="checkbox" id="Skin" class="modal__checkbox" value="Skin" />Skin</label>
+            <label for="Middle Ear"><input type="checkbox" id="Middle Ear" class="modal__checkbox"
+                    value="Middle Ear" />Middle Ear</label>
+            <label for="Bones"><input type="checkbox" id="Bones" class="modal__checkbox" value="Bones" />Bones</label>
+            <label for="Heart Valves"><input type="checkbox" id="Heart Valves" class="modal__checkbox"
+                    value="Heart Valves" />Heart Valves</label>
+            <label for="Cartilage"><input type="checkbox" id="Cartilage" class="modal__checkbox"
+                    value="Cartilage" />Cartilage</label>
+            <label for="Tendons"><input type="checkbox" id="Tendons" class="modal__checkbox"
+                    value="Tendons" />Tendons</label>
+            <label for="Ligaments"><input type="checkbox" id="Ligaments" class="modal__checkbox"
+                    value="Ligaments" />Ligaments</label>
+        </form>
+        <input type="button" value="SAVE & EXIT" id="setOrgan" onclick="toggleOrganList()">
+    </div>
     <script
         src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet"
@@ -67,10 +96,11 @@
         </div>
         <div class="navbarright">
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a id="active" href="./register.html">Donate</a></li>
-                <li><a href="./locate.html">Find Donors</a></li>
-                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a class="hover-underline-animation" href="../index.html">Home</a></li>
+                <li><a class="hover-underline-animation" href="./about.html">About Us</a></li>
+                <li><a class="hover-underline-animation" id="active" href="./register.html">Donate</a></li>
+                <li><a class="hover-underline-animation" href="./locate.html">Find Donors</a></li>
+                <li><a class="hover-underline-animation" href="./contact.html">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -105,6 +135,7 @@
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select>
+                <input type="button" value="Select Organs to pledge" onclick="toggleOrganList()">
             </div>
 
             <div class="form_row">

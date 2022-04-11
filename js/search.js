@@ -29,16 +29,30 @@ let elem = document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")[0];
 //     getData(result);
 //   }
 // });
+let form = document.querySelector("#submit");
+form.addEventListener("click", function (event) {
+  event.preventDefault(); //prevent useless refresh
+});
 let loader = document.getElementById("search_loader");
 var root = document.getElementById("search_result");
 function getData() {
-  root.innerHTML="";
+  root.innerHTML = "";
   loader.style.display = "block";
   let dist = document.getElementById("range").value;
+  let organ = document.getElementById("organ").value === "null" ? false : true;
   let bgrp = document.getElementById("bgrp").value.split(",");
+  let query = document.getElementById("type").value;
   // console.log(bgrp);
-  // console.log(result)
-  if (dist == "null" || bgrp[0] == "null" || result == null) {
+  // console.log(result);
+  // console.log(organ);
+  // console.log(dist);
+  // console.log(query);
+  if (
+    dist == "null" ||
+    (query == "B" && bgrp[0] == "null") ||
+    (query == "O" && organ == "null") ||
+    result == null
+  ) {
     setPlotter("invalid");
     return;
   }
@@ -46,13 +60,14 @@ function getData() {
   // console.log(typeof bgrp, bgrp);
   // var req = {
   //   "coords": JSON.parse(result),
-  //   'dist': dist,
+  //   "dist": dist,
   //   "bgrp": bgrp,
+  //   "organ": organ,
+  //   "query": query,
   // };
-  // req = JSON.stringify(req);
-  req = `{\r\n    \"bgrp\": \"[${bgrp}]\",\r\n\"coords\": [${JSON.parse(
+  req = `{\r\n  \"bgrp\": \"[${bgrp}]\",\r\n  \"coords\": [${JSON.parse(
     result
-  )}],\r\n\"dist\": \"${dist}\"\r\n}`; // req.replace(/[\r\n]+/gm, "");
+  )}],\r\n  \"dist\": \"${dist}\",\r\n  \"query\": \"${query}\",\r\n  \"organ\": \"${organ}\"\r\n}`;
   // console.log(req);
   fetch(API + "search/", {
     method: "POST",
@@ -92,6 +107,7 @@ function setPlotter(data) {
     var p = document.createElement("p");
     p.innerText = "Invalid Search. Fill Again!";
     modalInner.appendChild(p);
+    renderOptions("null");
   } else if (data[0] == undefined) {
     modalInner.innerHTML = "";
     window.onclick = function (event) {
@@ -105,6 +121,7 @@ function setPlotter(data) {
     p.innerText = "No mates found! Help us by expanding our network!!";
     modalInner.appendChild(p);
   } else {
+    root.style.display = "flex";
     const htmlString = data
       .map((data) => {
         return `
@@ -134,7 +151,23 @@ function setPlotter(data) {
     root.innerHTML = htmlString;
   }
   // setTimeout(() => {
-    loader.style.display = "none";
-    document.forms["search_module"].reset();
+  loader.style.display = "none";
+  document.forms["search_module"].reset();
   // }, 1000);
+}
+
+/** conditional search render */
+function renderOptions(e) {
+  console.log(e);
+  if (e == "O") {
+    document.getElementById("search_module").style.display = "flex";
+    document.getElementById("bgrp").style.display = "none";
+    document.getElementById("organ").style.display = "block";
+  } else if (e == "B") {
+    document.getElementById("search_module").style.display = "flex";
+    document.getElementById("bgrp").style.display = "block";
+    document.getElementById("organ").style.display = "none";
+  } else {
+    document.getElementById("search_module").style.display = "none";
+  }
 }
