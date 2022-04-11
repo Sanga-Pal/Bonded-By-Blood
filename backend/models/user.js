@@ -43,6 +43,13 @@ const userSchema = new mongoose.Schema({
     min: [1, "Weight cannot be less than 1"],
   },
   loc: { type: { type: String }, coordinates: [Number] },
+  organDonor : {
+    type : Boolean,
+    default : false
+  },
+  organs: {
+    type: [String],
+  },
 });
 userSchema.path("contact").validate(async (contact) => {
   const ct = await mongoose.models.User.countDocuments({

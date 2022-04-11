@@ -31,7 +31,7 @@ app.post("/signup/", (req, res) => {
 });
 
 app.post("/search/", async (req, res) => {
-  console.log((req.body));
+  console.log(req.body);
   // console.log(req.body.bgrp);
   // console.log((req.body.bgrp.split(",")));
   var resp = await fetch(req.body);
@@ -44,23 +44,43 @@ async function fetch(obj) {
   // console.log(typeof obj[0],obj)
   // console.log(typeof obj.coords[0])
   // console.log(parseInt(obj.dist));
-  const data = await User.find({
-    loc: {
-      $near: {
-        $geometry: {
-          type: "Point",
-          coordinates: obj.coords,
+  var data;
+  if (obj.query == "B") {
+    data = await User.find({
+      loc: {
+        $near: {
+          $geometry: {
+            type: "Point",
+            coordinates: obj.coords,
+          },
+          $maxDistance: obj.dist,
+          $minDistance: 0,
         },
-        $maxDistance: obj.dist,
-        $minDistance: 0,
       },
-    },
-    bloodGroup: {
-      $in: obj.bgrp.slice(1,-1).split(","),
-    },
-  });
-  console.log(data.length);
-  return data;
+      bloodGroup: {
+        $in: obj.bgrp.slice(1, -1).split(","),
+      },
+    });
+    console.log(data.length);
+    return data;
+  } else if (obj.query == "O") {
+    data = await User.find({
+      loc: {
+        $near: {
+          $geometry: {
+            type: "Point",
+            coordinates: obj.coords,
+          },
+          $maxDistance: obj.dist,
+          $minDistance: 0,
+        },
+      },
+      organDonor: true,
+      organ: { $in: [obj.organ] },
+    });
+    console.log(data.length);
+    return data;
+  }
 }
 
 app.listen(process.env.PORT || 8000, async () => {
