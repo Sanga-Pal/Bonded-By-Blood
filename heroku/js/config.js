@@ -1,1 +1,0 @@
-export default API_URL = 'https://bonded-by-blood.herokuapp.com/';
