@@ -10,25 +10,148 @@ mapboxgl-ctrl {
     margin-left: 300px;
 } */
 #geocoder {
-    margin: 20vh auto;
-    max-width: fit-content;
-    zoom: 1.3;
+  max-width: fit-content;
+  margin: 20px auto;
 }
-#geocoder input {
+#geocoder input,
+select,
+input {
   display: block;
   height: 35px;
   font-size: 10px;
-  margin-left: -11.5px;
   position: relative !important;
   height: 35px;
   font-size: 10px;
   color: aliceblue;
-  min-width: 250px;
-  /* max-width: 50%; */
-  margin: auto;
-  margin-bottom: 20px;
   padding: 10px;
   zoom: 1.3;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
+}
+/*Response Modal*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+#modal-content {
+  background-color: rgba(170, 170, 170, 0.192);
+  margin: 60vh auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: fit-content;
+  border: 1px solid #888; /* Could be more or less, depending on screen size */
+}
+.animate.pop {
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-duration: 0.2s;
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+#search_module {
+  display: none;
+  flex-direction: column;
+  margin: auto;
+  min-width: 300px;
+  width: 60vw;
+  justify-content: center;
+}
+body> .row{
+  margin-top: 120px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 60vw;
+  margin: auto;
+}
+select,
+input {
+  height: 35px;
+  margin: 5px auto;
+  font-size: 10px;
+  color: aliceblue;
+  width: 200px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+select option {
+  background-color: rgba(0, 0, 0, 0.855);
+}
+#organ, #bgrp{
+  display: none;
+}
+
+#search_result{
+  display: none;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: rgba(228, 139, 139, 0.2);
+}
+#search_loader{
+  width: 50px;
+  height: 50px;
+  display: none;
+  margin: auto;
+}
+#search_result .card {
+  width: 200px;
+  margin: 5px;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: center;
+  background-color: rgb(37, 37, 37);
+  border: inset 10px rgba(114, 114, 114, 0.1);
+}
+#search_result .card * {
+  font-family: monospace;
+  text-align: center;
+  word-wrap: break-word;
+
+}
+#search_result .card .bms {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#search_result .card .contact {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: fit-content;
+}
+#search_result .card a{
+  text-decoration: none;
+  color :turquoise;
+  word-break: break-all;
 }
