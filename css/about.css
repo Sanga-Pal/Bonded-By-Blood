@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.container div {
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(185, 95, 95);
+    border-radius: 50px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    animation: 4s linear infinite;
+    z-index: -1;
+}
+
+div .box {
+    height: 10px;
+    width: 10px;
+    border-radius: 50px;
+    background: rgb(206, 182, 182, 0.5);
+    position: absolute;
+    top: 20%;
+    right: 20%;
+}
+
+.container div:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation: animate 8s linear infinite;
+}
+
+.container div:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation: animate 10s linear infinite;
+}
+
+.container div:nth-child(3) {
+    top: 40%;
+    left: 40%;
+    animation: animate 5s linear infinite;
+}
+
+.container div:nth-child(4) {
+    top: 66%;
+    left: 30%;
+    animation: animate 7s linear infinite;
+}
+
+.container div:nth-child(5) {
+    top: 82%;
+    left: 5%;
+    animation: animate 5.5s linear infinite;
+}
+
+.container div:nth-child(6) {
+    top: 75%;
+    left: 60%;
+    animation: animate 4s linear infinite;
+}
+
+.container div:nth-child(7) {
+    top: 90%;
+    left: 50%;
+    animation: animate 6s linear infinite;
+}
+
+.container div:nth-child(8) {
+    top: 24%;
+    left: 80%;
+    animation: animate 9s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(70deg);
+    }
+    100% {
+        transform: scale(1.4) translateY(-100px) rotate(360deg);
+    }
+    100% {
+        transform: scale(1.4) translateX(-100px) rotate(360deg);
+    }
+}
+
+.aboutus {
+    color: rgb(124, 107, 107);
+    line-height: 1.5em;
+    font-size: 30px;
+}
+
+.midpara {
+    height: 50%;
+    width: 40%;
+    margin-top: 20%;
+    margin-left: 30%;
+    display: flex;
+    margin: 2px solid rgb(160, 114, 114);
+    text-align: center;
+}
+
+.cards {
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    /* background-image: linear-gradient(0deg, rgb(182, 119, 88), transparent); */
+    z-index: 100;
+}
+
+.card {
+    background-color: rgba(175, 43, 43, 0.213);
+    box-shadow: 0 5px 15px rgb(215, 164, 164);
+    height: 350px;
+    width: 270px;
+    top: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: column;
+}
+
+.card1:hover .gradient {
+    opacity: 1;
+}
+
+
+/* .gradient {
+    position: relative;
+    background-image: linear-gradient(0deg, rgb(182, 119, 88), transparent);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+} */
+
+.info {
+    display: flex;
+    justify-content: center;
+    top: 40%;
+}
+
+
+/* .text1 {
+    color: #fff;
+    position: relative;
+} */
+
+.image {
+    margin-top: 10%;
+}
+
+.image img {
+    width: 50%;
+    border-radius: 100px;
+}
+
+.info h1 {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* .card2 {
+    background-color: rgba(175, 43, 43, 0.213);
+    box-shadow: 0 5px 15px rgb(215, 164, 164);
+    height: 350px;
+    width: 270px;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.card2:hover .gradient {
+    opacity: 1;
+}
+
+.info2 {
+    /* position: absolute; */
+
+
+/* display: flex;
+    justify-content: center;
+    top: 40%;
+}
+
+.image2 {
+    margin-top: 10%;
+    margin-left: 25%;
+}
+
+.image2 img {
+    width: 70%;
+    border-radius: 100px;
+}
+
+.info2 h1 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.text2 {
+    color: #fff;
+}
+
+.card3 {
+    background-color: rgba(175, 43, 43, 0.213);
+    box-shadow: 0 5px 15px rgb(215, 164, 164);
+    height: 350px;
+    width: 270px;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.card3:hover .gradient {
+    opacity: 1;
+}
+
+.image3 {
+    margin-top: 10%;
+    margin-left: 25%;
+}
+
+.image3 img {
+    width: 70%;
+    border-radius: 100px;
+}
+
+.info3 {
+    /* position: absolute; */
+
+
+/* display: flex;
+    justify-content: center;
+    top: 40%;
+}
+
+.info3 h1 {
+    color: #fff;
+    font-size: 20px;
+}
+
+.text3 {
+    color: #fff;
+} */
+
+.links1 {
+    z-index: 9999;
+}
