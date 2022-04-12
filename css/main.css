@@ -12,6 +12,7 @@ C62368 */
   box-sizing: border-box;
   /* font-family: 'Inter', sans-serif; */
   font-family: "Noto Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,17 +29,19 @@ body {
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  z-index: 0.1;
+
 }
 
 .custom-shape-divider-top-1649341798 svg {
   position: relative;
   display: block;
   width: calc(300% + 1.3px);
-  height: 281px;
+  height: 260px;
 }
 
 .custom-shape-divider-top-1649341798 .shape-fill {
-  fill: #9e2e3b;
+  fill: #a23643;
   z-index: 0.1;
 }
 
@@ -49,80 +52,58 @@ body {
     height: 84px;
   }
 }
-nav {
-  display: flex;
-  padding: 0 2%;
-  width: 100%;
-  color: white;
-  flex-direction: row;
+.navbar{
+  z-index: 100;
+  display:flex;
+  flex-wrap: wrap;
   align-items: center;
-  position: sticky;
-  top: 0;
-  left: 0%;
-  height: 75px;
-  background: linear-gradient(rgba(31, 13, 51, 0.452), transparent);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  backdrop-filter: blur(2px);
   justify-content: space-between;
+  padding: 15px;
+  position: sticky;
   margin-bottom: 100px;
+  top: 0;
+  left:0;
+ 
+
 }
 .svg_type {
-  margin-top: 40%;
+  /* margin-top: 40%; */
+  width:100%;
+  height:100%;
   z-index: 100;
+  opacity: 1;
+  mix-blend-mode: lighten;
 }
-.navbarleft {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  font-size: 20px;
-  flex-basis: 30%;
-  background: transparent;
-  font-weight: 600;
-}
-.navbarright {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-basis: 45%;
-  background: transparent;
-  transition: 800ms;
-  font-weight: 400;
-  z-index: 100;
-}
-.navbarright ul {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
-  background: transparent;
-  font-size: 15px;
-  width: 60vw;
-}
-
-.navbarright ul li {
-  list-style: none;
-  background: transparent;
-  flex-wrap: nowrap;
-}
-
-.navbarright ul li a {
+.navbar a{
   text-decoration: none;
-  color: white;
-  margin: 0 40px 5px 0px;
-  background: transparent;
-  min-width: fit-content;
-  white-space: nowrap;
+  color:inherit;
+}
+.navbarleft{
+  margin-right: 50px;
+}
+.list{
+  /* margin-top:40px; */
+  list-style: none;
+  display:flex;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  gap:25px;
+  color:white;
+  transition: 500ms;
+}
+.fa{
+  color:white;
+  z-index: 100;
+  font-size: 30px;
 }
 
-.navbarright ul li a:hover {
-  transition: 200ms;
-  color: pink;
+.fa:hover{
+  color: #a23643;
+  transition:300ms;
 }
+
+
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -141,6 +122,11 @@ nav {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
+.movingtext{
+  font-size: 100px;
+  padding: auto;
+  font-weight: 700;
+}
 
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
@@ -152,28 +138,74 @@ nav {
   pointer-events: none;
   border-bottom: 3px solid;
 }
+#toggler,nav label{
+  display:none;
+}
 @media screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
+  body{
+    height: 100vh;
   }
+  .nabvar {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    padding: 15px;
+  }
+  .nabvar a{
+    text-decoration: none;
+    color: inherit;
+  }
+  
   .svg_type {
-    margin-top: -20px;
+
+    
+    width:100%;
+    font-size: 40px;
+  
   }
   .navbarleft {
-    margin: 20px;
+  margin-right:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .custom-shape-divider-top-1649341798{
+  display: none;
   }
   .navbarright {
-    margin-top: -120px;
-    width: 100%;
-    margin-left: -60px;
+   width:100%;
+   max-height:0;
+   margin-top:10px;
+   overflow: hidden;
+   transition: 300ms;
+   
   }
-  .navbarright ul {
-    width: 100%;
-    justify-content: space-around;
-    margin: auto;
+  .list{
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: 900ms;
+    padding:30px 0;
+    background-color:rgb(0, 0, 0);
+    opacity: 1;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.186);
+    
+
   }
-  .navbarright ul li {
-    margin: 0;
+  
+  .navbar label{
+    display:inline-flex;
+    align-items:center;
+    cursor:pointer;
+  }
+  #toggler:checked ~ .navbarright{
+    max-height:1000px;
+    transition: 900ms;
+  }
+  .innercontainer{
+    z-index: 99;
   }
 }
 
