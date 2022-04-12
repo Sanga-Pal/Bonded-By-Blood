@@ -94,11 +94,11 @@ body {
 .fa{
   color:white;
   z-index: 100;
-  font-size: 30px;
+  font-size: 30px !important;
 }
 
 .fa:hover{
-  color: #a23643;
+  color: #922d38;
   transition:300ms;
 }
 
@@ -141,10 +141,7 @@ body {
 #toggler,nav label{
   display:none;
 }
-@media screen and (max-width: 768px) {
-  body{
-    height: 100vh;
-  }
+@media screen and (max-width: 839px) {
   .nabvar {
     display:flex;
     flex-wrap: wrap;
@@ -170,29 +167,25 @@ body {
   align-items: center;
   justify-content: center;
   }
-  .custom-shape-divider-top-1649341798{
-  display: none;
-  }
   .navbarright {
    width:100%;
    max-height:0;
    margin-top:10px;
    overflow: hidden;
    transition: 300ms;
-   
+   position: absolute;
+    top: 60px;
   }
   .list{
+    height: fit-content;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
     transition: 900ms;
     padding:30px 0;
-    background-color:rgb(0, 0, 0);
-    opacity: 1;
+    background-color:rgb(0, 0, 0,0.9);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.186);
-    
-
   }
   
   .navbar label{
