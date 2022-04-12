@@ -19,6 +19,7 @@ body {
   /* height: 100vh;
   width: 100vw; */
   background-color: rgb(29, 28, 28);
+  overflow-x: hidden;
 }
 
 /* navbarcss */
@@ -178,6 +179,8 @@ body {
   }
   .list{
     height: fit-content;
+    max-width: 90vw;
+    margin: auto;
     flex-direction: column;
     align-items: center;
     cursor: pointer;

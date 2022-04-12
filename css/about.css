@@ -108,6 +108,7 @@ div .box {
 }
 
 .card {
+  border-radius: 10px;
   background-color: rgba(175, 43, 43, 0.213);
   box-shadow: 0 5px 15px rgb(215, 164, 164);
   height: 350px;
