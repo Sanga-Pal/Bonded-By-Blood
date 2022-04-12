@@ -39,7 +39,7 @@ function getData() {
   root.innerHTML = "";
   loader.style.display = "block";
   let dist = document.getElementById("range").value;
-  let organ = document.getElementById("organ").value === "null" ? false : true;
+  let organ = document.getElementById("organ").value;
   let bgrp = document.getElementById("bgrp").value.split(",");
   let query = document.getElementById("type").value;
   // console.log(bgrp);
