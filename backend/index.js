@@ -76,7 +76,7 @@ async function fetch(obj) {
         },
       },
       organDonor: true,
-      organ: { $in: [obj.organ] },
+      organs: obj.organ,
     });
     console.log(data.length);
     return data;

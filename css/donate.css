@@ -20,23 +20,14 @@
   display: none;
 }
 #organModal {
-  position: absolute;
-  height: fit-content;
-  width: 85vw;
-  max-width: 700px;
-  border-radius: 20px;
-  top: 0;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
   left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  padding: 30px;
-  z-index: 99999;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  display: none;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
   animation: zoomin 0.5s;
 }
 @keyframes zoomin {
@@ -52,15 +43,18 @@
 #organs {
   user-select: none; /*disabled highlighting*/
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
-  width: fit-content;
+  width: 600px;
+  max-width: 80vw;
   color: rgb(203, 138, 138);
-  max-width: 600px;
   margin: auto;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0,0.9);
 }
 #organs label {
-  margin: 25px 25px;
+  margin: 15px 25px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   box-shadow: 18px 18px 100px #373737, -18px -18px 100px #393939;

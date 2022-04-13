@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .container {
     height: 100%;
     width: 100%;
@@ -96,6 +100,31 @@ div .box {
     font-size: 30px;
 }
 
+.cards {
+    margin: auto;
+    margin-top: 140px;
+    display: flex;
+    justify-content: space-evenly;
+    /* background-image: linear-gradient(0deg, rgb(182, 119, 88), transparent); */
+    z-index: 100;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: rgba(175, 43, 43, 0.213);
+    box-shadow: 0 5px 15px rgb(215, 164, 164);
+    height: 350px;
+    width: 270px;
+    top: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: column;
+    margin: 20px;
+    zoom: 0.8;
+}
+
 .midpara {
     height: 50%;
     width: 40%;
@@ -106,51 +135,15 @@ div .box {
     text-align: center;
 }
 
-.cards {
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-    /* background-image: linear-gradient(0deg, rgb(182, 119, 88), transparent); */
-    z-index: 100;
-}
-
-.card {
-    background-color: rgba(175, 43, 43, 0.213);
-    box-shadow: 0 5px 15px rgb(215, 164, 164);
-    height: 350px;
-    width: 270px;
-    top: 20%;
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    flex-direction: column;
-}
-
 .card1:hover .gradient {
     opacity: 1;
 }
-
-
-/* .gradient {
-    position: relative;
-    background-image: linear-gradient(0deg, rgb(182, 119, 88), transparent);
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s;
-} */
 
 .info {
     display: flex;
     justify-content: center;
     top: 40%;
 }
-
-
-/* .text1 {
-    color: #fff;
-    position: relative;
-} */
 
 .image {
     margin-top: 10%;
@@ -166,6 +159,27 @@ div .box {
     font-size: 20px;
 }
 
-.links1 {
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.links a {
+    padding: 30px;
     z-index: 9999;
+}
+
+.links a:hover {
+    /** spin animation */
+    animation: spin 1s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: rotateY(360deg) rotateX(360deg);
+    }
 }

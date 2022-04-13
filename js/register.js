@@ -141,6 +141,12 @@ let organModal = document.getElementById("organModal");
 function toggleOrganList() {
   organModal.style.display =
     organModal.style.display === "flex" ? "none" : "flex";
+
+    window.onclick = function (event) {
+      if (event.target == organModal) {
+        organModal.style.display = "none";
+      }
+    };
 }
 function getOrgans() {
   var organs = [];

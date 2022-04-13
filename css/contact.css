@@ -1,3 +1,5 @@
+
+
 body {
     height: 100vh;
     width: 100vw;
@@ -20,6 +22,7 @@ body {
     transition-timing-function: ease;
     animation-delay: 1s;
     box-shadow: 0 0 10px 4px rgba(207, 144, 144, 0.347);
+    overflow: hidden;
 }
 
 .conatiner2 {
@@ -38,6 +41,7 @@ body {
     animation-delay: 6s;
     pointer-events: none;
     box-shadow: 0 0 10px 4px rgba(207, 144, 144, 0.347);
+    overflow: hidden;
 }
 
 .conatiner3 {
@@ -56,6 +60,7 @@ body {
     transition-timing-function: ease;
     overflow-y: hidden;
     box-shadow: 0 0 10px 4px rgba(144, 190, 207, 0.347);
+    overflow: hidden;
 }
 
 .contactsection {
