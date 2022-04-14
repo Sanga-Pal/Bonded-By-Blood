@@ -8,5 +8,7 @@
 FrontEnd | HTML,CSS,Javascript 
 Backend | NodeJs, Express, MongoDB, Mongoose
 External APIs | Mapbox, Formspree
+Tools | VSCode, Postman, Git
+Deployment | Vercel, Heroku
 
 Visit Us @ bonded-by-blood.vercel.app
