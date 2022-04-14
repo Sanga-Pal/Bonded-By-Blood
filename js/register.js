@@ -1,7 +1,6 @@
 const API = "https://bonded-by-blood.herokuapp.com/";
 // const API = "http://localhost:8000/";
 function getAge(dateString) {
-  console.log(dateString);
   var today = new Date();
   var birthDate = new Date(dateString);
   var age = today.getFullYear() - birthDate.getFullYear();
@@ -13,9 +12,8 @@ function getAge(dateString) {
 }
 function inComplete(form) {
   for (var key in form) {
-    // console.log(form[key]);
     if (form[key] === "" || form[key] === null || form[key] === "null") {
-      if(key === "organs")continue;
+      if (key === "organs") continue;
       return true;
     }
   }
@@ -29,7 +27,6 @@ function inComplete(form) {
   return false;
 }
 function useModal(json, formData, form) {
-  // console.log(json);
   json = JSON.parse(json);
   var modal = document.getElementById("myModal");
   var modalInner = document.getElementById("modal-content");
@@ -69,20 +66,17 @@ function useModal(json, formData, form) {
         : formData.email == ""
         ? "Email not filled  "
         : "Email Exists";
-    // console.log(cnt, em);
     if (cnt != null) {
       modalInner.appendChild(a);
     }
     if (em != null) {
       modalInner.appendChild(b);
     }
-    console.log(formData);
   }
   clock.style.display = "none";
   bg.style.display = "none";
 }
 function api_call(formData, form) {
-  console.log("api_method");
   fetch(API + "signup/", {
     method: "POST",
     headers: {
@@ -94,8 +88,6 @@ function api_call(formData, form) {
     .then((json) => useModal(JSON.stringify(json), formData, form))
     .catch((err) => console.log(err));
 }
-
-/*Form functionality */
 let reg_form = document.querySelector("#submit");
 reg_form.addEventListener("click", function (event) {
   event.preventDefault(); //prevent useless refresh
@@ -121,32 +113,29 @@ async function validate() {
       coordinates: form["geocoder_input"]?.value,
     },
     organs: await getOrgans(),
-    organDonor : organs.length === 0 ? false:true,
+    organDonor: organs.length === 0 ? false : true,
   };
   var json = form["geocoder_input"].value;
   json = json.substring(1, json.length - 1);
 
   var jsonArr = json.split(",");
   formData["loc"]["coordinates"] = jsonArr;
-  // console.log(formData);
-  // console.log(typeof form["geocoder_input"].value);
   if (!inComplete(formData)) {
     api_call(formData, form);
   } else {
     useModal(null);
   }
 }
-/** organ listing */
 let organModal = document.getElementById("organModal");
 function toggleOrganList() {
   organModal.style.display =
     organModal.style.display === "flex" ? "none" : "flex";
 
-    window.onclick = function (event) {
-      if (event.target == organModal) {
-        organModal.style.display = "none";
-      }
-    };
+  window.onclick = function (event) {
+    if (event.target == organModal) {
+      organModal.style.display = "none";
+    }
+  };
 }
 function getOrgans() {
   var organs = [];
@@ -156,6 +145,5 @@ function getOrgans() {
       organs.push(checkboxes[i].value);
     }
   }
-  console.log(organs);
   return organs;
 }

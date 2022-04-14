@@ -1,179 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register|BondedByBlood</title>
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/donate.css" />
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
-    <link rel="icon" href="../assets/favicon.gif" type="image/gif">
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../assets/favicon.gif" type="image/gif" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="loader_div">
-        <img id="loader" src="../assets/laoder_clock.svg">
+      <img id="loader" src="../assets/laoder_clock.svg" />
     </div>
     <div id="organModal">
-        <form id="organs">
-            <label for="Heart"><input type="checkbox" id="Heart" class="modal__checkbox" value="Heart" />Heart</label>
-            <label for="Kidney"><input type="checkbox" id="Kidney" class="modal__checkbox"
-                    value="Kidney" />Kidney</label>
-            <label for="Liver"><input type="checkbox" id="Liver" class="modal__checkbox" value="Liver" />Liver</label>
-            <label for="Lung"><input type="checkbox" id="Lung" class="modal__checkbox" value="Lung" />Lung</label>
-            <label for="Pancreas"><input type="checkbox" id="Pancreas" class="modal__checkbox"
-                    value="Pancreas" />Pancreas</label>
-            <label for="Intestines"><input type="checkbox" id="Intestines" class="modal__checkbox"
-                    value="Intestines" />Intestines</label>
-            <label for="Hands"><input type="checkbox" id="Hands" class="modal__checkbox" value="Hands" />Hands</label>
-            <label for="Face"><input type="checkbox" id="Face" class="modal__checkbox" value="Face" />Face</label>
-            <label for="Corneas"><input type="checkbox" id="Corneas" class="modal__checkbox"
-                    value="Corneas" />Corneas</label>
-            <label for="Skin"><input type="checkbox" id="Skin" class="modal__checkbox" value="Skin" />Skin</label>
-            <label for="Middle Ear"><input type="checkbox" id="Middle Ear" class="modal__checkbox"
-                    value="Middle Ear" />Middle Ear</label>
-            <label for="Bones"><input type="checkbox" id="Bones" class="modal__checkbox" value="Bones" />Bones</label>
-            <label for="Heart Valves"><input type="checkbox" id="Heart Valves" class="modal__checkbox"
-                    value="Heart Valves" />Heart Valves</label>
-            <label for="Cartilage"><input type="checkbox" id="Cartilage" class="modal__checkbox"
-                    value="Cartilage" />Cartilage</label>
-            <label for="Tendons"><input type="checkbox" id="Tendons" class="modal__checkbox"
-                    value="Tendons" />Tendons</label>
-            <label for="Ligaments"><input type="checkbox" id="Ligaments" class="modal__checkbox"
-                    value="Ligaments" />Ligaments</label>
-        </form>
+      <form id="organs">
+        <label for="Heart"
+          ><input
+            type="checkbox"
+            id="Heart"
+            class="modal__checkbox"
+            value="Heart"
+          />Heart</label
+        >
+        <label for="Kidney"
+          ><input
+            type="checkbox"
+            id="Kidney"
+            class="modal__checkbox"
+            value="Kidney"
+          />Kidney</label
+        >
+        <label for="Liver"
+          ><input
+            type="checkbox"
+            id="Liver"
+            class="modal__checkbox"
+            value="Liver"
+          />Liver</label
+        >
+        <label for="Lung"
+          ><input
+            type="checkbox"
+            id="Lung"
+            class="modal__checkbox"
+            value="Lung"
+          />Lung</label
+        >
+        <label for="Pancreas"
+          ><input
+            type="checkbox"
+            id="Pancreas"
+            class="modal__checkbox"
+            value="Pancreas"
+          />Pancreas</label
+        >
+        <label for="Intestines"
+          ><input
+            type="checkbox"
+            id="Intestines"
+            class="modal__checkbox"
+            value="Intestines"
+          />Intestines</label
+        >
+        <label for="Hands"
+          ><input
+            type="checkbox"
+            id="Hands"
+            class="modal__checkbox"
+            value="Hands"
+          />Hands</label
+        >
+        <label for="Face"
+          ><input
+            type="checkbox"
+            id="Face"
+            class="modal__checkbox"
+            value="Face"
+          />Face</label
+        >
+        <label for="Corneas"
+          ><input
+            type="checkbox"
+            id="Corneas"
+            class="modal__checkbox"
+            value="Corneas"
+          />Corneas</label
+        >
+        <label for="Skin"
+          ><input
+            type="checkbox"
+            id="Skin"
+            class="modal__checkbox"
+            value="Skin"
+          />Skin</label
+        >
+        <label for="Middle Ear"
+          ><input
+            type="checkbox"
+            id="Middle Ear"
+            class="modal__checkbox"
+            value="Middle Ear"
+          />Middle Ear</label
+        >
+        <label for="Bones"
+          ><input
+            type="checkbox"
+            id="Bones"
+            class="modal__checkbox"
+            value="Bones"
+          />Bones</label
+        >
+        <label for="Heart Valves"
+          ><input
+            type="checkbox"
+            id="Heart Valves"
+            class="modal__checkbox"
+            value="Heart Valves"
+          />Heart Valves</label
+        >
+        <label for="Cartilage"
+          ><input
+            type="checkbox"
+            id="Cartilage"
+            class="modal__checkbox"
+            value="Cartilage"
+          />Cartilage</label
+        >
+        <label for="Tendons"
+          ><input
+            type="checkbox"
+            id="Tendons"
+            class="modal__checkbox"
+            value="Tendons"
+          />Tendons</label
+        >
+        <label for="Ligaments"
+          ><input
+            type="checkbox"
+            id="Ligaments"
+            class="modal__checkbox"
+            value="Ligaments"
+          />Ligaments</label
+        >
+      </form>
     </div>
-    <script
-        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
-        type="text/css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
     <!-- The Modal -->
     <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div id="modal-content" class=" animate pop">
-        </div>
-
+      <!-- Modal content -->
+      <div id="modal-content" class="animate pop"></div>
     </div>
     <div class="custom-shape-divider-top-1649341798">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path
-                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                opacity=".25" class="shape-fill"></path>
-            <path
-                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                opacity=".5" class="shape-fill"></path>
-            <path
-                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                class="shape-fill"></path>
-        </svg>
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+          opacity=".25"
+          class="shape-fill"
+        ></path>
+        <path
+          d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+          opacity=".5"
+          class="shape-fill"
+        ></path>
+        <path
+          d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+          class="shape-fill"
+        ></path>
+      </svg>
     </div>
 
-
-
     <nav class="navbar">
-        <a class="navbarleft">
-            <svg class="svg_type" viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-                <path id="path">
-                    <animate attributeName="d" from="m0,110 h0" to="m0,110 h1100" dur="4s" begin="0s"
-                        repeatCount="indefinite" />
-                </path>
-                <text font-size="100" fill='#fff'>
-                    <textPath class="movingtext" xlink:href="#path">BONDED-BY-BLOOD
-                    </textPath>
-                </text>
-            </svg>
-        </a>
-        <input type="checkbox" id="toggler">
-        <label for="toggler"><i class="fa fa-bars" aria-hidden="true">
-            </i></label>
-        <div class="navbarright">
-            <ul class="list">
-                <li><a class="hover-underline-animation" href="/index.html">Home</a></li>
-                <li><a class="hover-underline-animation" href="/pages/about.html">About Us</a></li>
-                <li><a class="hover-underline-animation" id="active" href="/pages/register.html">Donate</a></li>
-                <li><a class="hover-underline-animation" href="/pages/locate.html">Find Donors</a></li>
-                <li><a class="hover-underline-animation" href="/pages/contact.html">Contact Us</a></li>
-            </ul>
-        </div>
+      <a class="navbarleft">
+        <svg
+          class="svg_type"
+          viewBox="0 0 1000 150"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+        >
+          <path id="path">
+            <animate
+              attributeName="d"
+              from="m0,110 h0"
+              to="m0,110 h1100"
+              dur="4s"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <text font-size="100" fill="#fff">
+            <textPath class="movingtext" xlink:href="#path">
+              BONDED-BY-BLOOD
+            </textPath>
+          </text>
+        </svg>
+      </a>
+      <input type="checkbox" id="toggler" />
+      <label for="toggler"
+        ><i class="fa fa-bars" aria-hidden="true"> </i
+      ></label>
+      <div class="navbarright">
+        <ul class="list">
+          <li>
+            <a class="hover-underline-animation" href="/index.html">Home</a>
+          </li>
+          <li>
+            <a class="hover-underline-animation" href="/pages/about.html"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover-underline-animation"
+              id="active"
+              href="/pages/register.html"
+              >Donate</a
+            >
+          </li>
+          <li>
+            <a class="hover-underline-animation" href="/pages/locate.html"
+              >Find Donors</a
+            >
+          </li>
+          <li>
+            <a class="hover-underline-animation" href="/pages/contact.html"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
     <div id="data">
-        <h1>Be A Hero!</h1>
-        <form id="registrationForm">
-            <div class="form_row"><input placeholder="First Name" type="text" name="fName" id="fname" required>
-                <input placeholder="Last Name" type="text" name="lName" id="lname" required>
-            </div>
-            <div class="form_row">
-                <input placeholder="Contact" type="tel" name="contact" id="contact" required>
-                <input placeholder="Email Address" type="email" name="email" id="email" required>
-                <input placeholder="Date Of Birth (Must be 18+)" class="textbox-n" type="text"
-                    onfocus="(this.type='date')" id="date" required>
-            </div>
-            <div class="form_row">
-                <select name="sex" id="sex" form="registrationForm" required>
-                    <option value="">Sex</option>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                    <option value="N">Non Binary</option>
-                    <option value="X">Prefer not to disclose</option>
-                </select>
-                <select name="bloodGroup" id="bgrp" form="registrationForm" required>
-                    <option value="">Select Blood Group</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                </select>
-                <input type="button" value="Select Organs to pledge" onclick="toggleOrganList()">
-            </div>
+      <h1>Be A Hero!</h1>
+      <form id="registrationForm">
+        <div class="form_row">
+          <input
+            placeholder="First Name"
+            type="text"
+            name="fName"
+            id="fname"
+            required
+          />
+          <input
+            placeholder="Last Name"
+            type="text"
+            name="lName"
+            id="lname"
+            required
+          />
+        </div>
+        <div class="form_row">
+          <input
+            placeholder="Contact"
+            type="tel"
+            name="contact"
+            id="contact"
+            required
+          />
+          <input
+            placeholder="Email Address"
+            type="email"
+            name="email"
+            id="email"
+            required
+          />
+          <input
+            placeholder="Date Of Birth (Must be 18+)"
+            class="textbox-n"
+            type="text"
+            onfocus="(this.type='date')"
+            id="date"
+            required
+          />
+        </div>
+        <div class="form_row">
+          <select name="sex" id="sex" form="registrationForm" required>
+            <option value="">Sex</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="N">Non Binary</option>
+            <option value="X">Prefer not to disclose</option>
+          </select>
+          <select name="bloodGroup" id="bgrp" form="registrationForm" required>
+            <option value="">Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+          <input
+            type="button"
+            value="Select Organs to pledge"
+            onclick="toggleOrganList()"
+          />
+        </div>
 
-            <div class="form_row">
-                <div class="cm"><input placeholder="Height (>0)" type="number" name="height" id="height" required>
-                </div>
-                <div class="kg"><input placeholder="Weight (>0)" type="number" name="weight" id="weight" required>
-                </div>
-            </div>
-            <div placeholder="Location" name="location" required id="geocoder"></div>
-            <input style="display:none;" placeholder="geocoder_inp" name="geocoder" id="geocoder_input" required>
-            <input type="submit" id="submit" onclick="validate(this)">
-        </form>
+        <div class="form_row">
+          <div class="cm">
+            <input
+              placeholder="Height (>0)"
+              type="number"
+              name="height"
+              id="height"
+              required
+            />
+          </div>
+          <div class="kg">
+            <input
+              placeholder="Weight (>0)"
+              type="number"
+              name="weight"
+              id="weight"
+              required
+            />
+          </div>
+        </div>
+        <div
+          placeholder="Location"
+          name="location"
+          required
+          id="geocoder"
+        ></div>
+        <input
+          style="display: none"
+          placeholder="geocoder_inp"
+          name="geocoder"
+          id="geocoder_input"
+          required
+        />
+        <input type="submit" id="submit" onclick="validate(this)" />
+      </form>
     </div>
     <script src="../js/register.js"></script>
     <script>
-        mapboxgl.accessToken =
-            "pk.eyJ1IjoiY29kZS1zb2hhbSIsImEiOiJjbDFsdmU0MjUwZWlpM2pvYnZmem16dG1kIn0.UX8hn1EN63EqElkp8D8Yhg";
-        const geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            placeholder: 'Search for Location',
-            types: "country,region,place,postcode,locality,neighborhood",
-        });
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoiY29kZS1zb2hhbSIsImEiOiJjbDFsdmU0MjUwZWlpM2pvYnZmem16dG1kIn0.UX8hn1EN63EqElkp8D8Yhg";
+      const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        placeholder: "Search for Location",
+        types: "country,region,place,postcode,locality,neighborhood",
+      });
 
-        geocoder.addTo("#geocoder");
+      geocoder.addTo("#geocoder");
 
-        // // Get the geocoder results container.
-        const results = document.getElementById("geocoder_input");
-        // Add geocoder result to container.
-        geocoder.on("result", (e) => {
-            results.value = JSON.stringify(e.result.geometry.coordinates, null, 2);
-        });
-
-        // // Clear results container when search is cleared.
-        // geocoder.on("clear", () => {
-        //     results.innerText = "";
-        // });
-
+      // // Get the geocoder results container.
+      const results = document.getElementById("geocoder_input");
+      // Add geocoder result to container.
+      geocoder.on("result", (e) => {
+        results.value = JSON.stringify(e.result.geometry.coordinates, null, 2);
+      });
     </script>
-</body>
-
+  </body>
 </html>

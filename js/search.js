@@ -11,24 +11,10 @@ const geocoder = new MapboxGeocoder({
 
 geocoder.addTo("#geocoder");
 var result = null;
-// // Get the geocoder results container.
-// Add geocoder result to container.
 geocoder.on("result", (e) => {
   result = JSON.stringify(e.result.geometry.coordinates, null, 2);
 });
-
-// // Clear results container when search is cleared.
-// geocoder.on("clear", () => {
-//     results.innerText = "";
-// });
 let elem = document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")[0];
-// elem.addEventListener("keyup", function (event) {
-//   if (event.keyCode === 13) {
-//     elem.value = "";
-//     // console.log(result);
-//     getData(result);
-//   }
-// });
 let form = document.querySelector("#submit");
 form.addEventListener("click", function (event) {
   event.preventDefault(); //prevent useless refresh
@@ -42,11 +28,7 @@ function getData() {
   let organ = document.getElementById("organ").value;
   let bgrp = document.getElementById("bgrp").value.split(",");
   let query = document.getElementById("type").value;
-  // console.log(bgrp);
-  // console.log(result);
-  // console.log(organ);
-  // console.log(dist);
-  // console.log(query);
+
   if (
     dist == "null" ||
     (query == "B" && bgrp[0] == "null") ||
@@ -56,19 +38,11 @@ function getData() {
     setPlotter("invalid");
     return;
   }
-  // console.log(bgrp)
-  // console.log(typeof bgrp, bgrp);
-  // var req = {
-  //   "coords": JSON.parse(result),
-  //   "dist": dist,
-  //   "bgrp": bgrp,
-  //   "organ": organ,
-  //   "query": query,
-  // };
+
   req = `{\r\n  \"bgrp\": \"[${bgrp}]\",\r\n  \"coords\": [${JSON.parse(
     result
   )}],\r\n  \"dist\": \"${dist}\",\r\n  \"query\": \"${query}\",\r\n  \"organ\": \"${organ}\"\r\n}`;
-  // console.log(req);
+
   fetch(API + "search/", {
     method: "POST",
     headers: {
@@ -93,7 +67,7 @@ function getAge(dateString) {
 function setPlotter(data) {
   var modal = document.getElementById("myModal");
   var modalInner = document.getElementById("modal-content");
-  // console.log(data.length);
+
   root.innerHTML = "";
   if (data == "invalid") {
     modalInner.innerHTML = "";
@@ -150,15 +124,13 @@ function setPlotter(data) {
       .join("");
     root.innerHTML = htmlString;
   }
-  // setTimeout(() => {
+
   loader.style.display = "none";
   document.forms["search_module"].reset();
-  // }, 1000);
 }
 
 /** conditional search render */
 function renderOptions(e) {
-  console.log(e);
   if (e == "O") {
     document.getElementById("search_module").style.display = "flex";
     document.getElementById("bgrp").style.display = "none";

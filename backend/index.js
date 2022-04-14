@@ -32,18 +32,11 @@ app.post("/signup/", (req, res) => {
 
 app.post("/search/", async (req, res) => {
   console.log(req.body);
-  // console.log(req.body.bgrp);
-  // console.log((req.body.bgrp.split(",")));
   var resp = await fetch(req.body);
-  // console.log(resp)
-  // res.send(req.body);
   res.send({ response: resp });
 });
 
 async function fetch(obj) {
-  // console.log(typeof obj[0],obj)
-  // console.log(typeof obj.coords[0])
-  // console.log(parseInt(obj.dist));
   var data;
   if (obj.query == "B") {
     data = await User.find({
