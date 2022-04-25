@@ -1,4 +1,4 @@
-const API = "https://bonded-by-blood.herokuapp.com/";
+const API = "https://bondedbyblood.herokuapp.com/";
 // const API = "http://localhost:8000/";
 
 mapboxgl.accessToken =
